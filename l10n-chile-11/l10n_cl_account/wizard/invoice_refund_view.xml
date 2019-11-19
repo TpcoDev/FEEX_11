@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Modificacion al Wizard de reembolso, para incluir opciones que requiere
+el sii para incluir las referencias en las notas de credito/debito
+@author: Daniel Blanco Martin daniel[at]blancomartin.cl
+@version: 2016-07-07 -->
+<odoo>
+    <data noupdate="0">
+
+        <!--<record id="view_account_invoice_null" model="ir.ui.view">
+            <field name="name">account.invoice_refund.view_null</field>
+            <field name="model">account.invoice.refund</field>
+            <field name="inherit_id" ref="account_document.view_account_invoice"/>
+            <field name="arch" type="xml">
+                <field name="journal_document_type_id" position="attributes">
+                    <attribute name="attrs" eval="{'invisible': True}"/>
+                </field>
+                <field name="document_number" position="attributes">
+                    <attribute name="attrs" eval="{'invisible': True}"/>
+                </field>
+            </field>
+        </record>-->
+
+        <record id="view_account_invoice_rectification" model="ir.ui.view">
+            <field name="name">account.invoice.refun.form</field>
+            <field name="model">account.invoice.refund</field>
+            <field name="inherit_id" ref="account.view_account_invoice_refund" />
+            <field name="arch" type="xml">
+                <xpath expr="//form/group[1]" position="attributes">
+                    <attribute name="attrs">{'invisible': [('l10n_cl_localization', '=', True)]}</attribute>
+                </xpath>
+                <xpath expr="//form/group[1]" position="after">
+                    <group string="Nota de Crédito / Débito"
+                           attrs="{'invisible': [('l10n_cl_localization', '!=', True)]}">
+                            <group>
+                                <field name="l10n_cl_localization" invisible="1"/>
+                                <field name="localization" invisible="1"/>
+                                <field name="document_type_id" attrs="{'required': [('l10n_cl_localization', '=', True)]}"/>
+                            </group>
+                            <group></group>
+                            <group>
+                               <field name="refund_only" invisible="1"/>
+                               <field name="filter_refund_cl"
+                                      attrs="{'required': [('l10n_cl_localization', '=', True)]}"
+                                      widget="radio"/>
+                            </group>
+                            <group>
+                                <div attrs="{'invisible':['|',('refund_only','=',True),('filter_refund_cl','&lt;&gt;','1')]}"
+                                     class="oe_grey" colspan="4">
+                                     Anula Documento: Utilice esta opción para anular totalmente el documento.
+                                     - Para anular factura o nota de débito: debe haber seleccionado Nota de Crédito.
+                                     - Para anular una nota de crédito: debe haber seleccionado una Nota de Débito.
+                                </div>
+                                <div attrs="{'invisible':['|',('refund_only','=',True),('filter_refund_cl','&lt;&gt;','2')]}"
+                                     class="oe_grey" colspan="4">
+                                     Corrige Texto: Utilice esta opción para rectificar texto en el documento original.
+                                     Esta opción genera un documento rectificativo con un producto que contiene
+                                     importe en cero.
+                                     - Para rectificar factura o nota de débito: debe haber seleccionado Nota de Crédito.
+                                     - Para rectificar una nota de crédito: debe haber seleccionado una Nota de Débito.
+                                </div>
+                                <div attrs="{'invisible':['|',('refund_only','=',True),('filter_refund_cl','&lt;&gt;','3')]}"
+                                     class="oe_grey" colspan="4">
+                                     Corrige Monto: Utilice esta opción para agregar un recargo o descuento. Una vez
+                                     Creado el documento rectificativo en borrador, deberá elegir un producto
+                                     (descuento o recargo por ejemplo).
+                                     - Para descontar un monto sobre una factura: debe haber seleccionado una Nota de Crédito.
+                                     - Para agregar un recargo sobre una factura: debe haber seleccionado una Nota de Débito.
+                                </div>
+                            </group>
+                            <group>
+                                <field name="description" placeholder="Describa el motivo de la rectificación"/>
+                            </group>
+                            <group>
+                                <field name="date_invoice"/>
+                                <field name="date" groups="base.group_no_one"/>
+                            </group>
+
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

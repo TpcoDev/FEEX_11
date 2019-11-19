@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="localization_fields_form">
+            <field name="name">localization.fields.form</field>
+            <field name="model">localization.fields</field>
+            <field name="arch" type="xml">
+                <form string="Localization Filter">
+                    <group>
+                        <field name="chart_account"/>
+                        <field name="model"/>
+                        <field name="field"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="localization_fields_tree">
+            <field name="name">localization.fields.tree</field>
+            <field name="model">localization.fields</field>
+            <field name="arch" type="xml">
+                <tree string="Localization Filter" editable="bottom">
+                    <field name="chart_account"/>
+                    <field name="model"/>
+                    <field name="field"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="action_localization_fields" model="ir.actions.act_window">
+            <field name="name">Localization Filter</field>
+            <field name="res_model">localization.fields</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="localization_fields" name="Localization Filtering" parent="base.menu_custom" />
+
+        <menuitem action="action_localization_fields"
+                  id="menu_localization_fields"
+                  parent="localization_fields"/>
+    </data>
+</odoo>

@@ -1,0 +1,12 @@
+id,active,name,receptor_ids/id,issuer_ids/id,taxes_included,fiscal_position_id/id,behavior
+dl_a,True,A,"res_BH,res_IVARI",res_IVARI,True,,VAT is discriminated by default in this type of invoice
+dl_b,True,B,"res_CF,res_BH",res_IVARI,False,,VAT is not discriminated by default in this type of invoice
+dl_c,True,C,"res_IVARI,res_BH",res_IVARI,False,,This type of invoice is VAT exempt
+dl_m,True,M,"res_IVARI,res_BH",res_BH,False,,This kind of invoice has some kind of withholding of taxes
+dl_e,True,E,res_EXT,res_IVARI,False,,This kind of invoice involves exports (usually exempt of VAT tax)
+dl_x,True,X,res_IVARI,res_IVARI,True,,This document does not involve directly a payment of tax (i.e. local waybills)
+dl_i,True,I,res_IVARI,res_IVARI,True,,"This type of document includes VAT, but cannot be credited"
+dl_s,True,S,res_IVARI,res_IVARI,True,,
+dl_d,True,D,res_IVARI,res_IVARI,True,,This document involves documents related to exports
+dl_t,True,T,res_IVARI,res_IVARI,True,,This documents refer to currency exchange documents
+dl_l,True,L,res_IVARI,res_IVARI,True,,This kind of invoice involves taxes over accrued commissions or similars

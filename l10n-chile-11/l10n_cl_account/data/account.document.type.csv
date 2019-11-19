@@ -1,0 +1,54 @@
+id,active,code_template,code,dte,document_letter_id/id,localization,name,report_name,doc_code_prefix,sequence,internal_type,use_prefix,validator_id/id,taxes_included
+dc_I_f_dtn,True,FAI,29,False,dl_i,chile,Factura de Inicio,FAI ,FAI ,10,invoice,False,validator_numero_factura,False
+dc_a_f_dtn,True,FVA,30,False,dl_a,chile,Factura,FACTURA ,FAC ,10,invoice,False,validator_numero_factura,False
+dc_y_f_dtn,True,FVE,32,False,dl_c,chile,Factura de Ventas y Servicios no Afectos o Exentos de IVA,F-EXENTA ,FNA ,10,invoice,False,validator_numero_factura,False
+dc_a_f_dte,True,FVA,33,True,dl_a,chile,Factura Electrónica,FACTURA ,FAC ,10,invoice,False,validator_numero_factura,False
+dc_y_f_dte,True,FVE,34,True,dl_c,chile,Factura no Afecta o Exenta Electrónica,F-EXENTA ,FNA ,10,invoice,False,validator_numero_factura,False
+dc_l_f_dtn,True,LFM,40,False,dl_l,chile,Liquidación Factura,L-FACTURAM ,FAL ,10,invoice,False,validator_numero_factura,False
+dc_l_f_dte,True,LFE,43,True,dl_l,chile,Liquidación Factura Electrónica,L-FACTURAE ,FAL ,10,invoice,False,validator_numero_factura,False
+dc_fc_f_dtn,True,FCA,45,False,dl_m,chile,Factura de Compra,FACTURA ,FAC ,10,invoice_in,False,validator_numero_factura,False
+dc_fc_f_dte,True,FCA,46,True,dl_m,chile,Factura de Compra Electrónica,FACTURA ,FAC ,10,invoice_in,False,validator_numero_factura,False
+dc_nd_f_dtn,True,NDA,55,False,dl_a,chile,Nota de Débito,NOTA DE DEBITO ,N/D ,10,debit_note,False,validator_numero_factura,False
+dc_nd_f_dte,True,NDA,56,True,dl_a,chile,Nota de Débito Electrónica,NOTA DE DEBITO ,N/D ,10,debit_note,False,validator_numero_factura,False
+dc_nc_f_dtn,True,NCA,60,False,dl_a,chile,Nota de Crédito,NOTA DE CREDITO ,N/C ,10,credit_note,False,validator_numero_factura,False
+dc_nc_f_dte,True,NCA,61,True,dl_a,chile,Nota de Crédito Electrónica,NOTA DE CREDITO ,N/C ,10,credit_note,False,validator_numero_factura,False
+dc_s_f_dtn,True,SRF,108,False,dl_s,chile,SRF Solicitud de Registro de Factura,SOL REGISTRO ,REG ,10,,False,validator_numero_factura,False
+dc_ftf_f_dtn,True,FVA,901,False,dl_a,chile,Factura de ventas a empresas del territorio preferencial ( Res. Ex. N° 1057,FACTURA ,FAC ,10,invoice,False,validator_numero_factura,False
+dc_din_f_dtn,True,DIN,914,False,dl_d,chile,Declaración de Ingreso (DIN),DEC ING ,DIN ,10,invoice_in,False,,False
+dc_dizf_f_dtn,True,DIN,911,False,dl_d,chile,Declaración de Ingreso a Zona Franca Primaria,DEC ING ,DIN ,10,invoice_in,False,,False
+dc_ftt_f_dtn,True,FTT,904,False,dl_a,chile,Factura de Traspaso,FACT TR ,FTR ,10,invoice,False,validator_numero_factura,False
+dc_frr_f_dtn,True,FRR,905,False,dl_a,chile,Factura de Reexpedición,FACT RX ,FRX ,10,invoice,False,validator_numero_factura,False
+dc_bzf_f_dtn,True,BZF,906,False,dl_b,chile,Boletas Venta Módulos ZF (todas),BOLETA ZF ,BZF ,10,invoice,False,,False
+dc_fzf_f_dtn,True,FZF,907,False,dl_a,chile,Facturas Venta Módulo ZF (todas),FACTURA ZF ,FZF ,10,invoice,False,validator_numero_factura,False
+dc_tca_f_dtn,True,TCA,500,False,dl_t,chile,Ajuste aumento Tipo de Cambio (código 500),TC-A ,TCA ,10,,False,,False
+dc_tcd_f_dtn,True,TCD,501,False,dl_t,chile,Ajuste disminución Tipo de Cambio (código 501),TC-D ,TCD ,10,,False,,False
+dc_b_f_dtn,True,BOL,35,False,dl_b,chile,Boleta de Venta,BOL ,BOL ,10,invoice,False,,False
+dc_b_e_dtn,True,BEX,38,False,dl_c,chile,Boleta exenta,BEX ,BEX,10,invoice,False,,False
+dc_b_f_dte,True,BEL,39,True,dl_b,chile,Boleta Electrónica,BEL ,BEL,10,invoice,False,,False
+dc_b_e_dte,True,BXE,41,True,dl_c,chile,Boleta Exenta Electrónica,BXE ,BXE,10,invoice,False,,False
+dc_m_f_dtn,True,BHO,70,False,dl_m,chile,Boleta de Honorarios,BHO ,BHO ,10,invoice,False,,False
+dc_m_d_dtn,True,BHE,71,True,dl_m,chile,Boleta de Honorarios Electrónica,BHE ,BHE ,10,invoice,False,,False
+dc_oc,True,OC,801,False,,chile,Orden de Compra,OC ,OC,10,,False,,False
+dc_hes,True,HES,HES,False,,chile,Hoja de Entrada de Servicio (HES),HES ,HES,10,,False,,False
+dc_hem,True,HEM,HEM,False,,chile,Hoja de Entrada de Materiales (HEM),HEM ,HEM,10,,False,,False
+dc_migo,True,MIG,MIG,False,,chile,Movimiento de Mercancías (MIGO),MIGO ,MIGO,10,,False,,False
+dc_li,True,LIQ,103,False,,chile,Liquidación,LIQ ,LIQ,10,,False,,False
+dc_gd,True,GD,50,False,dl_x,chile,Guía de Despacho,GD ,GD,10,stock_picking,False,,False
+dc_gd_dte,True,GDE,52,True,dl_x,chile,Guía de Despacho Electrónica,GDE ,GDE,10,stock_picking,False,validator_delivery_guide,False
+dc_fe_dte,True,FCXE,110,True,dl_e,chile,Factura de Exportación Electrónica,FCXE ,FCXE,10,invoice,False,validator_numero_factura,False
+dc_ndex_dte,True,NDXE,111,True,dl_e,chile,Nota de Débito de Exportación Electrónica,NDXE ,NDXE,10,debit_note,False,validator_numero_factura,False
+dc_ncex_dte,True,NCXE,112,True,dl_e,chile,Nota de Crédito de Exportación Electrónica,NCXE ,NCXE,10,credit_note,False,validator_numero_factura,False
+dc_ndp,True,NP,802,False,,chile,Nota de pedido,NP ,NP,10,,False,,False
+dc_cont,True,CONT,803,False,,chile,Contrato,CONT ,CONT,10,,False,,False
+dc_resol,True,RES,804,False,,chile,Resolución,RES ,RES,10,,False,,False
+dc_prchc,True,PCHC,805,False,,chile,Proceso ChileCompra,PCHC ,PCHC,10,,False,,False
+dc_fichc,True,FCHC,806,False,,chile,Ficha ChileCompra,FCHC ,FCHC,10,,False,,False
+dc_dus,True,DUS,807,False,,chile,DUS,DUS ,DUS,10,,False,,False
+dc_bl_cemb,True,B/L,808,False,,chile,B/L (Conocimiento de embarque),B/L ,B/L,10,,False,,False
+dc_awb,True,AWB,809,False,,chile,AWB Airway Bill,AWB ,AWB,10,,False,,False
+dc_mic_dta,True,MDT,810,False,,chile,MIC/DTA,MDT ,MDT,10,,False,,False
+dc_cpor,True,CPR,811,False,,chile,Carta de Porte,CPR ,CPR,10,,False,,False
+dc_res_sna,True,RSN,812,False,,chile,Resolución del SNA donde califica Servicios de Exportación,RSN ,RSN,10,,False,,False
+dc_pasap,True,PSP,813,False,,chile,Pasaporte,PSP ,PSP,10,,False,,False
+dc_cd_bol,True,CRTD,814,False,,chile,Certificado de Depósito Bolsa Prod. Chile.,CRTD ,CRTD,10,,False,,False
+dc_vp_pren,True,VLPR,815,False,,chile,Vale de Prenda Bolsa Prod. Chile,VLPR ,VLPR,10,,False,,False

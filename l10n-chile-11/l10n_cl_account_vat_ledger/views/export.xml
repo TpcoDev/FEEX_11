@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+      id="libro_xlsx"
+      model="account.move.book"
+      string="Libro XLSX"
+      report_type="xlsx"
+      name="libroxlsx"
+      file="account.move.book.xlsx"
+      attachment_use="True"
+      attachment="(object.state in ('Enviado', 'Proceso')) and ((object.name or '').replace('/','')+'.xlsx')"
+    />
+    <report
+      id="libro_h_xlsx"
+      model="account.move.book.honorarios"
+      string="Libro Honorarios"
+      report_type="xlsx"
+      name="account.move.book.honorarios.xlsx"
+      file="account.move.book.honorarios.xlsx"
+      attachment_use="True"
+      attachment="(object.state in ('Enviado','Proceso')) and ((object.name or '').replace('/','')+'.xlsx')"
+    />
+
+    <report string="Libro CV PDF"
+          id="action_print_libro"
+          model="account.move.book"
+          report_type="qweb-pdf"
+          name="l10n_cl_account_vat_ledger.libro_cv"
+          file="l10n_cl_account_vat_ledger.libro_cv"
+          attachment_use="False"
+          attachment="object.name.replace('/','')+'.pdf'"
+    />
+
+    <record id="paperformat_vat_ledger" model="report.paperformat">
+        <field name="name">Horizontal 2</field>
+        <field name="default" eval="True"/>
+        <field name="format">custom</field>
+        <field name="page_height">280</field>
+        <field name="page_width">216</field>
+        <field name="orientation">Landscape</field>
+        <field name="margin_top">20</field>
+        <field name="margin_bottom">20</field>
+        <field name="margin_left">7</field>
+        <field name="margin_right">7</field>
+        <field name="header_line" eval="False" />
+        <field name="header_spacing">15</field>
+        <field name="dpi">90</field>
+    </record>
+    <record id="l10n_cl_account_vat_ledger.action_print_libro" model="ir.actions.report">
+        <field name="paperformat_id" ref="l10n_cl_account_vat_ledger.paperformat_vat_ledger" />
+    </record>
+
+    <template id="resumen">
+        <table class="table table-condensed">
+            <thead >
+                <tr>
+                <th colspan="9">Resumen</th>
+                </tr>
+                <tr style="max-height:8px; line-height:12px; font-size:12px !important; padding:0px;">
+                <t t-foreach="values['summary_keys']" t-as="sum_key">
+                <th class="text-center"><span t-esc="sum_key"/></th>
+                </t>
+                </tr>
+            </thead>
+            <t t-foreach="values['summary']" t-as="summary">
+                <t t-set="counter" t-value="0"/>
+                <tr style="max-height:8px; line-height:12px; font-size:12px !important; padding:0px;">
+                    <t t-foreach="summary" t-as="sumval">
+                        <t t-if="counter &gt;= 3 and 'TotOp' not in sumval[0]">
+                            <t t-if="sumval[1] in ['', '0']">
+                                <td class="text-right"><span t-esc="'$ 0'"/></td>
+                            </t>
+                            <t t-else="">
+                                <td class="text-right"><span t-esc="'$ ' + sumval[1]"/></td>
+                            </t>
+                        </t>
+                        <t t-else="">
+                            <td class="text-center"><span t-esc="sumval[1]"/></td>
+                        </t>
+                        <t t-set="counter" t-value="counter + 1"/>
+                    </t>
+                </tr>
+            </t>
+            <tr>
+                <t t-foreach="values['summary_totals'].items()" t-as="stotals">
+                    <t t-if="stotals[0] not in ['TpoDoc', 'TpoImp']">
+                        <t t-if="'TotM' in stotals[0]">
+                            <td class="text-right">
+                                $ <span style="font-weight:bold;" t-esc="int(stotals[1])"/>
+                            </td>
+                        </t>
+                        <t t-else="">
+                            <td class="text-center">
+                                <span style="font-weight:bold;" t-esc="int(stotals[1])"/>
+                            </td>
+                        </t>
+                    </t>
+                    <t t-elif="stotals[0] in ['TpoDoc']">
+                        <td style="font-weight:bold;">TOTALES</td>
+                    </t>
+                    <t t-else="">
+                        <td></td>
+                    </t>
+
+                </t>
+            </tr>
+        </table>
+    </template>
+
+    <template id="detail_totals_fees">
+        <t t-foreach="values['detail_totals'].items()" t-as="dtotals">
+            <t t-if="dtotals[0] in ['TpoDoc']">
+                <td style="font-weight:bold;">TOTALES</td>
+            </t>
+            <t t-elif="dtotals[0] in ['NroDoc', 'FchDoc', 'RUTDoc', 'RznSoc', 'MntExe', 'TasaImp', 'IVAUsoComun', 'MntSinCred']">
+                <td></td>
+            </t>
+            <t t-else="">
+                <td class="text-right">
+                    $ <span style="font-weight:bold;" t-esc="int(dtotals[1])"/>
+                </td>
+            </t>
+        </t>
+    </template>
+    <template id="detail_totals_invoices">
+        <t t-foreach="values['detail_totals'].items()" t-as="dtotals">
+            <t t-if="dtotals[0] in ['TpoDoc']">
+                <td style="font-weight:bold;">TOTALES</td>
+            </t>
+            <t t-elif="dtotals[0] in ['NroDoc', 'FchDoc', 'RUTDoc', 'RznSoc', 'TasaImp']">
+                <td></td>
+            </t>
+            <t t-else="">
+                <td class="text-right">
+                    $ <span style="font-weight:bold;" t-esc="dtotals[1]"/>
+                </td>
+            </t>
+        </t>
+    </template>
+    <template id="layout_libro">
+        <t t-set="values" t-value="o.get_values_from_xml()"/>
+        <t t-call="web.external_layout">
+            <div class="page" style="padding-top:55px;">
+            <div class="h1">
+                Libro de
+                <t t-if="o.is_fee">
+                    <t t-set="type_doc" t-value="'fees'"/>
+                    <span>Boletas de Honorarios</span>
+                </t>
+                <t t-else="">
+                    <t t-set="type_doc" t-value="'invoices'"/>
+                    <t t-if="o.operation_type=='purchase'"><span>Compras</span></t>
+                    <t t-else="">Ventas</t>
+                </t>
+                - Periodo: <span t-esc="o.fiscal_period"/>
+            </div>
+            <div class="row">
+                <table class="table table-condensed">
+                    <thead >
+                        <tr>
+                            <th colspan="4">Datos de la Compañía</th>
+                        </tr>
+                        <tr style="font-weight:bold; max-height:8px; line-height:12px; font-size:12px !important; padding:0px;">
+                            <td>Nombre o Razón Social</td>
+                            <td>Rol Único Tributario</td>
+                            <td>Fecha</td>
+                            <td>Periodo Tributario</td>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td><span t-esc="o.company_id.name"/></td>
+                        <td><span t-esc="o.company_id.main_id_number"/></td>
+                        <td>
+                            <span t-esc="o.date[8:] +'-'+ o.date[5:7]+'-'+o.date[:4]"/>
+                        </td>
+                        <td><span t-esc="o.fiscal_period"/></td>
+                    </tr>
+                </table>
+            </div>
+            <t t-if="not o.sii_xml_request"><div class="h2">No hay facturas para este periodo</div></t>
+            <t t-else="">
+            <div class="row">
+                <t t-if="o.is_fee==False">
+                    <t t-call="l10n_cl_account_vat_ledger.resumen"/>
+                </t>
+                <table class="table table-condensed">
+                    <thead >
+                        <tr>
+                          <th colspan="12">Detalles</th>
+                        </tr>
+                         <tr style="max-height:8px; line-height:12px; font-size:12px !important; padding:0px;">
+                            <t t-foreach="values['detail_titles'][type_doc]" t-as="det_key">
+                                <th class="text-center"><span t-esc="det_key"/></th>
+                            </t>
+                         </tr>
+                    </thead>
+                    <t t-foreach="values['details']" t-as="details">
+                        <t t-set="counter" t-value="0"/>
+                        <tr style="max-height:8px; line-height:12px; font-size:12px !important; padding:0px;">
+                            <t t-foreach="details" t-as="detval">
+                                <t t-if="detval[0] == 'RznSoc'">
+                                    <td class="text-left"><span t-esc="detval[1]"/></td>
+                                </t>
+                                <t t-elif="detval[0] == 'FchDoc'">
+                                    <td class="text-center"><span t-esc="detval[1][8:] +'-'+ detval[1][5:7]+'-'+detval[1][:4]"/></td>
+                                </t>
+                                <t t-elif="detval[0] in ['MntExe', 'IVAUsoComun', 'MntSinCred'] and o.is_fee">
+                                    <td class="text-left"></td>
+                                </t>
+                                <t t-elif="detval[0] == 'TasaImp'">
+                                    <t t-if="detval[1] not in ['', '0']">
+                                        <td class="text-right">
+                                            <span t-esc="detval[1] + '%'"/>
+                                        </td>
+                                    </t>
+                                    <t t-else="">
+                                        <td class="text-left"></td>
+                                    </t>
+                                </t>
+                                <t t-elif="detval[0] in ['MntIVA'] and detval[1] in ['', '0']">
+                                    <td class="text-right"><span t-esc="'$ 0'"/></td>
+                                </t>
+                                <t t-elif="detval[0] in ['MntIVA'] and detval[1] not in ['', '0']">
+                                    <td class="text-right"><span t-esc="'$ ' + detval[1]"/></td>
+                                </t>
+                                <t t-elif="counter >= 5">
+                                    <td class="text-right"><span t-esc="'$ ' + detval[1]"/></td>
+                                </t>
+                                <t t-else="">
+                                    <td class="text-center"><span t-esc="detval[1]"/></td>
+                                </t>
+                                <t t-set="counter" t-value="counter + 1"/>
+                            </t>
+                        </tr>
+                    </t>
+                    <tr>
+                        <t t-if="o.is_fee">
+                            <t t-call="l10n_cl_account_vat_ledger.detail_totals_fees"/>
+                        </t>
+                        <t t-else="">
+                            <t t-call="l10n_cl_account_vat_ledger.detail_totals_invoices"/>
+                        </t>
+                    </tr>
+                </table>
+            </div>
+        </t>
+    </div>
+    </t>
+    </template>
+
+    <template id="libro_cv" >
+        <t t-foreach="docs" t-as="o">
+            <t t-call="l10n_cl_account_vat_ledger.layout_libro" t-lang="o.company_id.partner_id.lang"/>
+        </t>
+    </template>
+
+</odoo>

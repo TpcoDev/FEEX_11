@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="exempt_fp" model="account.fiscal.position.template">
+            <field name="name">Operaciones Locales Exentas</field>
+            <field name="chart_template_id" ref="cl_chart_template_bmya"/>
+            <field name="active">True</field>
+        </record>
+        <record id="exempt_fp1" model="account.fiscal.position.tax.template">
+            <field name="position_id" ref="exempt_fp"/>
+            <field name="tax_src_id" ref="IVAV_19"/>
+            <field name="tax_dest_id" ref=""/>
+        </record>
+        <record id="exempt_fp2" model="account.fiscal.position.tax.template">
+            <field name="position_id" ref="exempt_fp"/>
+            <field name="tax_src_id" ref="IVAC_19"/>
+            <field name="tax_dest_id" ref=""/>
+        </record>
+    </data>
+</odoo>

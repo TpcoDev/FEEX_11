@@ -1,0 +1,257 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_cl_monetary_correction
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e-20180814\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-08-15 20:39+0000\n"
+"PO-Revision-Date: 2018-08-15 17:53-0300\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.1.1\n"
+"Last-Translator: \n"
+"Language: es\n"
+
+#. module: l10n_cl_monetary_correction
+#: selection:account.ipc,month_from:0 selection:account.ipc,month_to:0
+msgid "April"
+msgstr "Abril"
+
+#. module: l10n_cl_monetary_correction
+#: selection:account.ipc,month_from:0 selection:account.ipc,month_to:0
+msgid "August"
+msgstr "Agosto"
+
+#. module: l10n_cl_monetary_correction
+#: model:ir.ui.view,arch_db:l10n_cl_monetary_correction.product_product_view
+#: model:ir.ui.view,arch_db:l10n_cl_monetary_correction.product_template_view
+msgid "Corrección Monetaria"
+msgstr "Corrección Monetaria"
+
+#. module: l10n_cl_monetary_correction
+#: model:ir.model.fields,help:l10n_cl_monetary_correction.field_account_journal_monetary_correction
+msgid "Correct Account Entries in this Journal Using IPC Values"
+msgstr ""
+"Corregir asientos contables en este diario utilizando valores de IPC"
+
+#. module: l10n_cl_monetary_correction
+#: model:ir.model.fields,field_description:l10n_cl_monetary_correction.field_account_journal_journal_ids
+msgid "Corrected Journals"
+msgstr "Diarios Corregidos"
+
+#. module: l10n_cl_monetary_correction
+#: model:ir.model.fields,field_description:l10n_cl_monetary_correction.field_account_ipc_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: l10n_cl_monetary_correction
+#: model:ir.model.fields,field_description:l10n_cl_monetary_correction.field_account_ipc_create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: l10n_cl_monetary_correction
+#: selection:account.ipc,month_from:0 selection:account.ipc,month_to:0
+msgid "December"
+msgstr "Diciembre"
+
+#. module: l10n_cl_monetary_correction
+#: model:ir.model.fields,field_description:l10n_cl_monetary_correction.field_account_ipc_display_name
+msgid "Display Name"
+msgstr "Nombre"
+
+#. module: l10n_cl_monetary_correction
+#: selection:product.template,origin_monetary_correction:0
+msgid "Domestic"
+msgstr "Nacional"
+
+#. module: l10n_cl_monetary_correction
+#: selection:account.ipc,month_from:0 selection:account.ipc,month_to:0
+msgid "February"
+msgstr "Febrero"
+
+#. module: l10n_cl_monetary_correction
+#: selection:product.template,origin_monetary_correction:0
+msgid "Foreign"
+msgstr "Importado"
+
+#. module: l10n_cl_monetary_correction
+#: model:ir.model.fields,field_description:l10n_cl_monetary_correction.field_product_product_highest_cost_in_period
+#: model:ir.model.fields,field_description:l10n_cl_monetary_correction.field_product_template_highest_cost_in_period
+msgid "Highest cost in period"
+msgstr "Costo más alto del período"
+
+#. module: l10n_cl_monetary_correction
+#: model:ir.model.fields,field_description:l10n_cl_monetary_correction.field_account_ipc_id
+msgid "ID"
+msgstr "ID (identificación)"
+
+#. module: l10n_cl_monetary_correction
+#: model:ir.model.fields,help:l10n_cl_monetary_correction.field_account_ipc_month_from
+msgid "IPC Computation from first day of this month"
+msgstr "Cómputo de IPC desde el primer día de este mes"
+
+#. module: l10n_cl_monetary_correction
+#: model:ir.model.fields,help:l10n_cl_monetary_correction.field_account_ipc_month_to
+msgid "IPC Computation to last day of this month"
+msgstr "Cómputo del IPC hasta el último días de este mes"
+
+#. module: l10n_cl_monetary_correction
+#: model:ir.actions.act_window,name:l10n_cl_monetary_correction.action_account_ipc
+#: model:ir.ui.menu,name:l10n_cl_monetary_correction.menu_account_ipc
+#: model:ir.ui.view,arch_db:l10n_cl_monetary_correction.account_ipc_view_form
+#: model:ir.ui.view,arch_db:l10n_cl_monetary_correction.account_ipc_view_tree
+msgid "IPC Values"
+msgstr "Valores de IPC"
+
+#. module: l10n_cl_monetary_correction
+#: selection:account.ipc,month_from:0 selection:account.ipc,month_to:0
+msgid "January"
+msgstr "Enero"
+
+#. module: l10n_cl_monetary_correction
+#: model:ir.model,name:l10n_cl_monetary_correction.model_account_journal
+msgid "Journal"
+msgstr "Diario"
+
+#. module: l10n_cl_monetary_correction
+#: model:ir.model.fields,field_description:l10n_cl_monetary_correction.field_account_journal_correction_journal_id
+msgid "Journal for correction entries"
+msgstr "Diario para correcciones monetarias"
+
+#. module: l10n_cl_monetary_correction
+#: model:ir.model.fields,help:l10n_cl_monetary_correction.field_account_journal_correction_journal_id
+msgid "Journal to be used to register correction entries"
+msgstr ""
+"Especifique el diario en el cual se registrarán las entradas "
+"contables de corrección monetaria"
+
+#. module: l10n_cl_monetary_correction
+#: selection:account.ipc,month_from:0 selection:account.ipc,month_to:0
+msgid "July"
+msgstr "Julio"
+
+#. module: l10n_cl_monetary_correction
+#: selection:account.ipc,month_from:0 selection:account.ipc,month_to:0
+msgid "June"
+msgstr "Junio"
+
+#. module: l10n_cl_monetary_correction
+#: model:ir.model.fields,field_description:l10n_cl_monetary_correction.field_account_ipc___last_update
+msgid "Last Modified on"
+msgstr "Ultima modificación el"
+
+#. module: l10n_cl_monetary_correction
+#: model:ir.model.fields,field_description:l10n_cl_monetary_correction.field_account_ipc_write_uid
+msgid "Last Updated by"
+msgstr "Ultima modificación por"
+
+#. module: l10n_cl_monetary_correction
+#: model:ir.model.fields,field_description:l10n_cl_monetary_correction.field_account_ipc_write_date
+msgid "Last Updated on"
+msgstr "Ultima actualización el"
+
+#. module: l10n_cl_monetary_correction
+#: selection:account.ipc,month_from:0 selection:account.ipc,month_to:0
+msgid "March"
+msgstr "Marzo"
+
+#. module: l10n_cl_monetary_correction
+#: selection:account.ipc,month_from:0 selection:account.ipc,month_to:0
+msgid "May"
+msgstr "Mayo"
+
+#. module: l10n_cl_monetary_correction
+#: model:ir.model.fields,field_description:l10n_cl_monetary_correction.field_account_journal_monetary_correction
+#: model:ir.ui.menu,name:l10n_cl_monetary_correction.menu_account_monetary_correction
+msgid "Monetary Correction"
+msgstr "Corrección Monetaria"
+
+#. module: l10n_cl_monetary_correction
+#: model:ir.model.fields,field_description:l10n_cl_monetary_correction.field_account_ipc_month_from
+msgid "Month From"
+msgstr "Mes Inicial"
+
+#. module: l10n_cl_monetary_correction
+#: model:ir.model.fields,field_description:l10n_cl_monetary_correction.field_account_ipc_month_to
+msgid "Month To"
+msgstr "Mes Final"
+
+#. module: l10n_cl_monetary_correction
+#: model:ir.model.fields,field_description:l10n_cl_monetary_correction.field_account_ipc_name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: l10n_cl_monetary_correction
+#: selection:account.journal,monetary_correction:0
+msgid "No"
+msgstr "No"
+
+#. module: l10n_cl_monetary_correction
+#: selection:account.ipc,month_from:0 selection:account.ipc,month_to:0
+msgid "November"
+msgstr "Noviembre"
+
+#. module: l10n_cl_monetary_correction
+#: selection:account.ipc,month_from:0 selection:account.ipc,month_to:0
+msgid "October"
+msgstr "Octubre"
+
+#. module: l10n_cl_monetary_correction
+#: model:ir.model,name:l10n_cl_monetary_correction.model_product_product
+msgid "Product"
+msgstr "Producto"
+
+#. module: l10n_cl_monetary_correction
+#: model:ir.model,name:l10n_cl_monetary_correction.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de Producto"
+
+#. module: l10n_cl_monetary_correction
+#: selection:account.ipc,month_from:0 selection:account.ipc,month_to:0
+msgid "September"
+msgstr "Septiembre"
+
+#. module: l10n_cl_monetary_correction
+#: model:ir.model.fields,help:l10n_cl_monetary_correction.field_account_journal_journal_ids
+msgid ""
+"This journal is used to register correction entries for the following "
+"journals"
+msgstr ""
+"Este diario es usado para registrar correcciones para los siguientes "
+"diarios"
+
+#. module: l10n_cl_monetary_correction
+#: model:ir.model.fields,field_description:l10n_cl_monetary_correction.field_product_product_origin_monetary_correction
+#: model:ir.model.fields,field_description:l10n_cl_monetary_correction.field_product_template_origin_monetary_correction
+msgid "Type of product for Monetary Correction"
+msgstr "Tipo de producto para corrección monetaria"
+
+#. module: l10n_cl_monetary_correction
+#: model:ir.model.fields,field_description:l10n_cl_monetary_correction.field_account_ipc_value
+msgid "Value"
+msgstr "Valor"
+
+#. module: l10n_cl_monetary_correction
+#: model:ir.model.fields,field_description:l10n_cl_monetary_correction.field_account_ipc_year_from
+msgid "Year From"
+msgstr "Año de orígen"
+
+#. module: l10n_cl_monetary_correction
+#: model:ir.model.fields,field_description:l10n_cl_monetary_correction.field_account_ipc_year_to
+msgid "Year To"
+msgstr "Año de cálculo"
+
+#. module: l10n_cl_monetary_correction
+#: selection:account.journal,monetary_correction:0
+msgid "Yes"
+msgstr "Si"
+
+#. module: l10n_cl_monetary_correction
+#: model:ir.model,name:l10n_cl_monetary_correction.model_account_ipc
+msgid "account.ipc"
+msgstr ""

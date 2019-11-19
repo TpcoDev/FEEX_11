@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_account_invoice_filter" model="ir.ui.view">
+            <field name="name">invoice.search</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+            <field name="arch" type="xml">
+                <group position="inside">
+                    <filter string="State" domain="[]" context="{'group_by': 'state_id'}"/>
+                </group>
+            </field>
+        </record>
+        <record id="view_invoice_form" model="ir.ui.view">
+            <field name="name">l10n_cl_account.invoice.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="point_of_sale_type" invisible="1"/>
+                    <field name="document_letter_name" invisible="1"/>
+                </form>
+                <div groups="base.group_multi_currency" position="after">
+                    <field name="currency_rate" attrs="{'invisible': [('currency_rate', '=', False)]}"/>
+                </div>
+                <field name="journal_id" position="after">
+                    <field name="taxpayer_type_id" states="open,paid"/>
+                </field>
+                <field name="payment_term_id" position="after">
+                    <field name="journal_id" options="{'no_create': True}" attrs="{'readonly':[('move_name','!=',False)]}"/>
+                    <field name="fiscal_position_id" options="{'no_create': True}" placeholder="Auto-detect"/>
+
+                    <field name="sii_incoterms_id" attrs="{'invisible': [('document_letter_name', '!=', 'E')]}"/>
+                    <field name='sii_concept' attrs="{'invisible': True}"/>
+                </field>
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='other_info']/group[1]/group[1]/field[@name='fiscal_position_id']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='other_info']/group[1]/group[1]/field[@name='journal_id']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="view_supplier_invoice_form" model="ir.ui.view">
+            <field name="name">l10n_cl_account supplier.invoice.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+                <field name="sequence_number_next_prefix" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="sequence_number_next" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="reference" position="after">
+                    <field name="fiscal_position_id" options="{'no_create': True}" placeholder="Auto-detect"/>
+                    <field name="name"
+                           string="Glosa"
+                           attrs="{'required': [('state', 'in', ['draft'])],
+                                   'readonly': [('state', 'not in', ['draft'])]}"
+                           placeholder="Glosa para contabilidad"/>
+                </field>
+                <field name="display_name" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                    <attribute name="invisible">0</attribute>
+                </field>
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='other_info']/group[1]/group[1]/field[@name='journal_id']" position="after">
+                    <field name="taxpayer_type_id" states="open,paid"/>
+                </xpath>
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='other_info']/group[1]/group[2]/field[@name='fiscal_position_id']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='other_info']/group[1]/group[1]/field[@name='journal_id']" position="attributes">
+                    <attribute name="attrs">{"readonly": [["state","not in",["draft"]]]}</attribute>
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='other_info']/group[1]/group[1]/field[@name='name']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

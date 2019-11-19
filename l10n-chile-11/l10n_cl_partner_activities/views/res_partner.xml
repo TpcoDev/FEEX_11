@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_partner_activity_inherit_form">
+        <field name="name">res.partner.activities.form.inherit</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <field name="lang" position="before">
+                <field name="partner_activities_ids"
+                    placeholder="Actividades del Partner" widget="many2many_tags"
+                    options="{'no_create': True}"
+                    domain="[('new_activity', '=', True)]"
+                    context="{'search_by_code': True}"
+                    attrs="{'required': [('activities_opt','=','activity_description')],
+                       'invisible': False}"/>
+                    <!--attrs="{'required': [('activities_opt','=','encoded_activity')]}"-->
+                <field name="activity_description"
+                    placeholder="Glosa Giro"
+                    attrs="{'required': [('activities_opt','=','activity_description')],
+                           'invisible': [('activity_description_invisible', '=', True)]}"/>
+                <field name="activity_description_invisible" attrs="{'invisible': True}"/>
+                <field name="activities_opt" widget="radio" attrs="{'invisible': True}"/>
+            </field>
+        </field>
+    </record>
+</odoo>

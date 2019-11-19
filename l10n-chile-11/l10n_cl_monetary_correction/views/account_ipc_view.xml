@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="account_ipc_view_form">
+            <field name="name">account.ipc.view.form</field>
+            <field name="model">account.ipc</field>
+            <field name="arch" type="xml">
+                <form string="IPC Values">
+                    <group cols="8">
+                        <group>
+                            <field name="year_from"/>
+                            <field name="year_to"/>
+                        </group>
+                        <group>
+                            <field name="month_from"/>
+                            <field name="month_to"/>
+                        </group>
+                        <group>
+                            <field name="value"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="account_ipc_view_tree">
+            <field name="name">account.ipc.view.tree</field>
+            <field name="model">account.ipc</field>
+            <field name="arch" type="xml">
+                <tree string="IPC Values">
+                    <field name="year_from"/>
+                    <field name="month_from"/>
+                    <field name="year_to"/>
+                    <field name="month_to"/>
+                    <field name="value"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_account_ipc" model="ir.actions.act_window">
+            <field name="name">IPC Values</field>
+            <field name="res_model">account.ipc</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_account_monetary_correction"
+                  name="Monetary Correction"
+                  parent="account.menu_finance_entries" />
+
+        <menuitem id="menu_account_ipc"
+                  name="IPC Values"
+                  action="action_account_ipc"
+                  parent="menu_account_monetary_correction"/>
+    </data>
+</odoo>

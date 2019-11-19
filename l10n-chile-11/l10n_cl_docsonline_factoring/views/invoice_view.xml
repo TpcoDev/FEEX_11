@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="assets_backend" name="docsonline factoring assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/l10n_cl_docsonline_factoring/static/src/css/style.css"/>
+            </xpath>
+        </template>
+        <record id="view_factoring_button_invoice_form" model="ir.ui.view">
+            <field name="name">view.factoring.button.invoice.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button class="btn oe_stat_button" icon="fa-retweet" type="object"
+                            name="hand_over_dte" color="red"
+                            attrs="{'invisible': [('factoring_offers_count', '!=', 0)]}">
+                        <field name="factoring_offers_count" string="Of. Factoring" widget="statinfo"/>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+        <record id="view_factoring_button_invoice_tree" model="ir.ui.view">
+            <field name="name">view.factoring.button.invoice.tree</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_tree"/>
+            <field name="arch" type="xml">
+                <field name="partner_id" position="before">
+                    <button type="object" name="hand_over_dte"
+                            help="Ud. tiene ofertas de factoring para este DTE"
+                            class="facto-icon" attrs="{'invisible': [('display_name', 'not in', ['FNA 000184', 'FNA 000177', 'FNA 000180'])]}"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

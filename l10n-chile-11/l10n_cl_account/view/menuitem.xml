@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <menuitem name="SII Chile"
+    	id="menu_sii_chile" sequence="5"
+        parent="account_document.menu_tax_entities_config"/>
+
+    	<menuitem name="Document Relation Issuer/Receptor (Letters)"
+    		action="action_document_letter"
+    		id="menu_document_letter_sii_chile" 
+    		sequence="5" parent="menu_sii_chile"/>
+
+    	<menuitem name="Fiscal Document Types"
+    		action="action_document_type_sii_chile"
+            id="menu_document_type_sii_chile"
+            sequence="15" parent="menu_sii_chile"/>
+
+        <menuitem name="Tax Payer Types" 
+        	action="action_taxpayer_type"
+        	id="menu_taxpayer_type" sequence="15" 
+        	parent="menu_sii_chile"/>
+
+
+    <menuitem id="account_reports_cl_statements_menu" name="Chile Statements" parent="account.menu_finance_reports" sequence="3" groups="account.group_account_user"/>
+</odoo>

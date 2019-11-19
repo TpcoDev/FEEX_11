@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="journal_view">
+            <field name="name">journal.ipc.view.form</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='show_on_dashboard']" position="after">
+                    <field name="monetary_correction"
+                           attrs="{'invisible': [('type', '=', 'monetary_correction'), ]}"/>
+                    <field name="correction_journal_id"
+                           domain="[('type', 'not in', ['monetary_correction', 'sale'])]"
+                           attrs="{'invisible': [
+                                '|', ('type', '=', 'monetary_correction'),
+                                     ('monetary_correction', '!=', 'yes'), ]}"/>
+                    <field name="journal_ids"
+                           domain="[('type', 'not in', ['monetary_correction', 'sale'])]"
+                           widget="many2many_tags"
+                           attrs="{'invisible': [
+                                ('type', '!=', 'monetary_correction')]}"/>
+                </xpath>
+                <xpath expr="//field[@name='default_debit_account_id']" position="attributes">
+                    <attribute name="attrs">{'required': [('type', '=', 'monetary_correction')]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='default_credit_account_id']" position="attributes">
+                    <attribute name="attrs">
+                        {'required': [('type', '=', 'monetary_correction')]}
+                    </attribute>
+                </xpath>
+                <field name="show_on_dashboard" position="attributes">
+                    <attribute name="attrs">
+                        {'invisible': [('type', '=', 'monetary_correction')]}
+                    </attribute>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

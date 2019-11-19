@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-extend="ListView.buttons">
+        <t t-jquery="button.oe_list_add" t-operation="after">
+            <t t-if="widget.model in ['sii.send_queue']">
+                 <Button class="oe_button" type="button">Process Queue</Button>
+            </t>
+         </t>
+    </t>
+</templates>

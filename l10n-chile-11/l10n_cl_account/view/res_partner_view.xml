@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+
+        <record id="view_partner_form" model="ir.ui.view">
+            <field name="name">res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="priority" eval="90"/>
+            <field name="inherit_id" ref="l10n_cl_partner.view_partner_form"/>
+            <field name="arch" type="xml">
+
+                <label for="main_id_number" position="before">
+                    <field name="taxpayer_type_id" options="{'no_open': True, 'no_create': True}" attrs="{'invisible': [('is_company','=',False), ('parent_id','!=',False)]}"/>
+                    <field name="l10n_cl_localization" invisible="1"/>
+                </label>
+
+                <field name="vat" position="attributes">
+                    <attribute name="attrs">{'invisible': [
+                        ("l10n_cl_localization", "=", True),
+                        '|', ("main_id_number","!=","55555555-5"), ("main_id_number","!=","55.555.555-5") ]}
+                    </attribute>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_partner_property_form" model="ir.ui.view">
+            <field name="name">res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="account.view_partner_property_form"/>
+            <field name="arch" type="xml">
+                <field name="ref" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="parent_id" position="after">
+                    <field name="ref" placeholder="Nombre de fantasía"/>
+                </field>
+                <page name="accounting" position="after">
+                    <page string="Fiscal Data" name="fiscal_data" attrs="{'invisible': [('is_company','=',False),('parent_id','!=',False)]}">
+                        <!-- add other documents -->
+                        <group string="SII" name="sii">
+                            <group name="sii_col_1">
+                                <field name="start_date"/>
+                            </group>
+                        </group>
+                    </page>
+                </page>
+
+            </field>
+        </record>
+        <record id="view_res_partner_filter" model="ir.ui.view">
+            <field name="name">view.res.partner.filter.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <field name="category_id" position="after">
+                    <field name="taxpayer_type_id"/>
+                </field>
+                <filter name="salesperson" position="before">
+                    <filter string="Tax Payer Type" context="{'group_by': 'taxpayer_type_id'}"/>
+                </filter>
+            </field>
+        </record>
+    </data>
+</openerp>

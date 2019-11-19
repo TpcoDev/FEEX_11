@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="view_sii_send_queue_form" model="ir.ui.view">
+        <field name="name">sii.send_queue.form</field>
+        <field name="model">sii.send_queue</field>
+        <field name="arch" type="xml">
+            <form string="SII Cola de envío">
+                <header>
+                    <button type="object" name="cron_process_queue"
+                            attrs="{'invisible': [('active', '=', False)]}"
+                            help="Process Queue" string="Send Now" icon="fa-cog"/>
+                    <field name='tipo_trabajo' widget="statusbar" attrs="{'invisible': [('active', '=', False)]}"/>
+                </header>
+                <group>
+                    <field name="doc_ids" invisible="1"/>
+                    <field name="model_selection"/>
+                    <field name="invoice_ids" attrs="{'invisible': [('model_selection', '!=', 'account.invoice')]}"/>
+                    <field name="model" invisible="1"/>
+                    <field name="user_id" />
+                    <field name="date_time"/>
+                    <field name="send_email"/>
+                    <field name="active"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_sii_send_queue_tree" model="ir.ui.view">
+        <field name="name">sii.send_queue.tree</field>
+        <field name="model">sii.send_queue</field>
+        <field name="arch" type="xml">
+            <tree string="SII Cola de envío">
+                <field name="doc_ids"/>
+                <field name="model_selection"/>
+                <field name="invoice_ids" attrs="{'invisible': [('model_selection', '!=', 'account.invoice')]}"/>
+                <!--<field name="picking_ids" attrs="{'invisible': [('invoice_ids', '!=', False)]}"/>-->
+                <field name="model" invisible="1"/>
+                <field name="user_id" />
+                <field name='tipo_trabajo'/>
+                <field name="date_time"/>
+                <field name="send_email"/>
+                <field name="active"/>
+                <button type="object" name="cron_process_queue" help="Process Queue" icon="fa-cog"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="cola_envio">
+        <field name="name">SII Cola de envío</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sii.send_queue</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Cola de envío" action="cola_envio"
+                id="menu_action_sii_send_queue"
+                parent="l10n_cl_account.menu_sii_chile" sequence="140"/>
+</odoo>

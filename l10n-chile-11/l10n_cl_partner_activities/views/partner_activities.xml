@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_partner_activities_search" model="ir.ui.view">
+        <field name="name">partner.activities.search</field>
+        <field name="model">partner.activities</field>
+        <field name="arch" type="xml">
+            <search string="Search By">
+                <field name="code"/>
+                <field name="name"/>
+                <filter string="New Activities" domain="[('new_activity','=',True)]" help="New Activities Filter"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_partner_activities_form" model="ir.ui.view">
+        <field name="name">partner.activities.form</field>
+        <field name="model">partner.activities</field>
+        <field name="arch" type="xml">
+            <form string="SII Economic Activities">
+                <group>
+                    <field name="code"/>
+                    <field name="parent_id"/>
+                    <field name="grand_parent_id" invisible="1"/>
+                    <field name="name"/>
+                    <field name="vat_affected" attrs="{'required': [('parent_id', '!=', False), ('grand_parent_id', '!=', False)]}"/>
+                    <field name="tax_category" attrs="{'required': [('parent_id', '!=', False), ('grand_parent_id', '!=', False)]}"/>
+                    <field name="internet_available" attrs="{'required': [('parent_id', '!=', False), ('grand_parent_id', '!=', False)]}"/>
+                    <field name="new_activity" readonly="1"/>
+                    <field name="active"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_partner_activities_tree" model="ir.ui.view">
+        <field name="name">partner.activities.tree</field>
+        <field name="model">partner.activities</field>
+        <field name="arch" type="xml">
+            <tree string="SII Economic Activities">
+                <field name="code"/>
+                <field name="parent_id" invisible="1"/>
+                <field name="name"/>
+                <field name="vat_affected"/>
+                <field name="tax_category"/>
+                <field name="new_activity" invisible="1"/>
+                <field name="internet_available" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="act_partner_activities">
+        <field name="name">SII Partner Activities</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">partner.activities</field>
+        <field name="domain">[('new_activity', '=', True)]</field>
+        <field name="context">{'group_by': ['grand_parent_id', 'parent_id']}</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="SII Partner Activities"
+        id="menu_action_act_partner_activities"
+        action="act_partner_activities" 
+        parent="l10n_cl_account.menu_sii_chile"
+        sequence="90"/>
+</odoo>

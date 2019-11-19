@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="dte_document_search_view">
+        <field name="name">dte.document.search</field>
+        <field name="model">mail.message.dte.document</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="number"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="dte_document_view_form" model="ir.ui.view">
+        <field name="name">dte.document.form</field>
+        <field name="model">mail.message.dte.document</field>
+        <field name="arch" type="xml">
+            <form string="Mail DTE Process">
+                <header>
+                    <field name="state" widget="statusbar" clickable="True"/>
+                    <button name="accept_document" string="Aceptar" type="object" attrs="{'invisible':[('state', '!=', 'draft')]}"/>
+                    <button name="reject_document" string="Rechazar" type="object" attrs="{'invisible':[('state', '!=', 'draft')]}"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="dte_id" />
+                            <field name="date" />
+                            <field name="new_partner" />
+                            <field name="partner_id" />
+                            <field name="number" />
+                            <field name="document_type_id" />
+                        </group>
+                        <group>
+                            <field name="amount" />
+                            <field name="currency_id" />
+                            <field name="invoice_id" />
+                            <field name="company_id" />
+                            <field name="purchase_to_done" widget="many2many_tags"
+                                domain="[('partner_id', '=', partner_id)]"
+                                options="{'no_create': True}"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Líneas del documento">
+                            <field name="invoice_line_ids" editable="bottom" widget="one2many">
+                                <tree editable="top/bottom">
+                                    <field name="document_id" invisible="True"/>
+                                    <field name="product_id" />
+                                    <field name="new_product" />
+                                    <field name="quantity" />
+                                    <field name="price_unit" />
+                                    <field name="price_subtotal" />
+                                    <field name="currency_id" invisible="True"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="XML DTE">
+                            <field name="xml" />
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="dte_document_lines_view_form" model="ir.ui.view">
+        <field name="name">dte.form</field>
+        <field name="model">mail.message.dte.document.line</field>
+        <field name="arch" type="xml">
+            <form string="Mail DTE Process">
+                <sheet>
+                    <group>
+                        <field name="document_id" />
+                        <field name="product_id" />
+                        <field name="new_product" />
+                        <field name="quantity" />
+                        <field name="price_unit" />
+                        <field name="price_subtotal" />
+                        <field name="currency_id" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="dte_document_view_tree" model="ir.ui.view">
+        <field name="name">dte.document.tree</field>
+        <field name="model">mail.message.dte.document</field>
+        <field name="arch" type="xml">
+            <tree string="Documentos">
+                <field name="date" />
+                <field name="document_type_id" />
+                <field name="number" />
+                <field name="new_partner" />
+                <field name="partner_id" />
+                <field name="amount" />
+                <field name="currency_id" />
+                <field name="invoice_line_ids" />
+                <field name="company_id" />
+                <field name="dte_id" />
+                <field name="state" />
+                <button name="accept_document" string="Aceptar" type="object" attrs="{'invisible':[('state', '!=', 'draft')]}"/>
+                <button name="reject_document" string="Rechazar" type="object" attrs="{'invisible':[('state', '!=', 'draft')]}" context="{'incoming_reject': 1}"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_dte_process" model="ir.actions.act_window">
+        <field name="type">ir.actions.act_window</field>
+        <field name="name">Recepcionar XML de Envío</field>
+        <field name="domain">[]</field>
+        <field name="res_model">mail.message.dte.document</field>
+        <field name="view_type">form</field>
+        <field name="target">current</field>
+    </record>
+
+    <menuitem action="action_dte_process"
+        id="menu_action_recept_xml"
+        parent="menu_supplier_xml"
+        sequence="13"/>
+
+</odoo>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="invoice_wizard_view" model="ir.ui.view">
+            <field name="name">invoice_wizard_view</field>
+            <field name="model">sale.advance.payment.inv</field>
+            <field name="inherit_id" ref="sale.view_sale_advance_payment_inv"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/group" position="after">
+                    <group>
+                        <group col="2" colspan="2">
+                            <field name="refer_to_so"/>
+                        </group>
+                    </group>
+                    <!--<group attrs="{'invisible': [('refer_to_so', '=', False)]}">
+                        <group>
+                            <group col="4" colspan="2">
+                                <field name="sale_order_no"/>
+                            </group>
+                        </group>
+                    </group>-->
+                    <group>
+                        <group col="2" colspan="2">
+                            <field name="refer_to_po"/>
+                        </group>
+                    </group>
+                    <group attrs="{'invisible': [('refer_to_po', '=', False)]}">
+                        <group col="4" colspan="2">
+                            <field name="customer_po" placeholder="Customer Purchase Order Number"/>
+                            <field name="date_po" placeholder="Purchase order date"/>
+                        </group>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="res.currency" id="base.EUR">
+        <field name="active">True</field>
+        <field name="rounding">0.01</field>
+        <field name="decimal_places">6</field>
+        <field name="name">EUR</field>
+        <field name="rate">0.00132746</field>
+        <field name="position">before</field>
+        <field name="symbol">€</field>
+    </record>
+    <record model="res.currency" id="base.UF">
+        <field name="active">True</field>
+        <field name="rounding">0.01</field>
+        <field name="decimal_places">14</field>
+        <field name="name">UF</field>
+        <field name="rate">0.000037</field>
+        <field name="position">after</field>
+        <field name="symbol">UF</field>
+    </record>
+    <record model="res.currency" id="base.USD">
+        <field name="active">True</field>
+        <field name="rounding">0.01</field>
+        <field name="decimal_places">6</field>
+        <field name="name">USD</field>
+        <field name="name">0.00157978</field>
+        <field name="position">before</field>
+        <field name="symbol">USD</field>
+    </record>
+    <record model="res.currency" id="base.UTM">
+        <field name="active">True</field>
+        <field name="rounding">0.01</field>
+        <field name="decimal_places">14</field>
+        <field name="name">UTM</field>
+        <field name="rate">0.00002104</field>
+        <field name="position">after</field>
+        <field name="symbol">UTM</field>
+    </record>
+    <record model="res.currency" id="base.CLP">
+        <field name="active">True</field>
+        <field name="rounding">1.0</field>
+        <field name="decimal_places">0</field>
+        <field name="name">CLP</field>
+        <field name="rate">1</field>
+        <field name="position">after</field>
+        <field name="symbol">CLP</field>
+    </record>
+</odoo>

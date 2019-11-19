@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_account_journal_form" model="ir.ui.view">
+            <field name="model">account.journal</field>
+            <field name="name">account.journal.form</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                <button name="toggle_active" position="after">
+                    <div groups="account.group_account_invoice" class="alert alert-danger" role="alert" style="margin-bottom:0px;"
+                         attrs="{'invisible': ['|', ('localization', '!=', 'chile'), ('no_documents', '=', False)]}">
+                        You have not defined documents for this journal. You must press <bold>"Create Journal Document"</bold> button in order to create them.
+                    </div>
+                    <div groups="account.group_account_invoice" class="alert alert-danger" role="alert" style="margin-bottom:0px;"
+                         attrs="{'invisible': ['|', ('localization', '!=', 'chile'), ('no_sequence', '=', False)]}">
+                        There are some documents with undefined sequences. You should set up sequences them before usage.
+                    </div>
+                    <div groups="account.group_account_invoice" class="alert alert-danger" role="alert" style="margin-bottom:0px;"
+                         attrs="{'invisible': ['|', ('localization', '!=', 'chile'), ('no_caf', '=', False)]}">
+                        There are some documents with undefined CAF Files. You should set up a CAF file for each of them before using them.
+                    </div>
+                </button>
+                <field name="type" position="after">
+                    <field name="no_documents" invisible="1"/>
+                    <field name="no_sequence" invisible="1"/>
+                    <field name="no_caf" invisible="1"/>
+                    <field name="point_of_sale_type"
+                           attrs="{'invisible':['|', '|', ('localization', '!=', 'chile'), ('use_documents', '=', False),
+                           ('type', '!=', 'sale')]}"/>
+                </field>
+                <field name="company_id" position="after">
+                    <field name="point_of_sale_number" attrs="{'invisible': [['type', '!=', 'sale']]}"/>
+                    <field name="point_of_sale_name" attrs="{'invisible': [['type', '!=', 'sale']]}"/>
+                    <field name="point_of_sale_cashier_code" attrs="{'invisible': [['type', '!=', 'sale']]}"/>
+                </field>
+            </field>
+        </record>
+        <record id="view_document_account_journal_form" model="ir.ui.view">
+            <field name="model">account.journal</field>
+            <field name="name">document_account.journal.form</field>
+            <field name="inherit_id" ref="account_document.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                <field name="document_sequence_type" position="attributes">
+                    <attribute name="attrs">{'invisible': [('localization','=','chile')]}</attribute>
+                </field>
+            </field>
+        </record>
+        <!-- to make bank account creation easier -->
+        <record id="view_account_bank_journal_form" model="ir.ui.view">
+            <field name="name">account.bank.journal.form</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_bank_journal_form"/>
+            <field name="arch" type="xml">
+                <div class="oe_title">
+                    <label for="bank_sbif" class="oe_edit_only"/>
+                    <h2><field name="bank_sbif"/></h2>
+                </div>
+            </field>
+        </record>
+    </data>
+</openerp>

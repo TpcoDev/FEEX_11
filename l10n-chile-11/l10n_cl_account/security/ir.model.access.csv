@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_taxpayer_type_manager,taxpayer.type.manager,model_account_taxpayer_type,account.group_account_manager,1,1,1,1
+access_taxpayer_type_user,taxpayer.type.all,model_account_taxpayer_type,account.group_account_invoice,1,0,0,0
+access_account_document_letter_adviser,account.document.letter.adviser,model_account_document_letter,account.group_account_manager,1,1,1,1
+access_account_document_letter_all,account.document.letter.all,model_account_document_letter,account.group_account_invoice,1,0,0,0
+access_sii_sucursal_manager,access.sii.sucursal.manager,model_sii_sucursal,account.group_account_manager,1,1,1,1
+access_sii_sucursal_user,access.sii.sucursal.user,model_sii_sucursal,account.group_account_invoice,1,0,0,0
+access_account_invoice_reference,access_account_invoice_reference,model_account_invoice_reference,,1,1,1,1
+access_account_invoice_reference_manager,account_invoice_reference_manager,model_account_invoice_reference,account.group_account_manager,1,1,1,1

@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="1">
+    <record model="localization.fields" id="l10n_cl_dte_1">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="base.model_res_company"/>
+        <field name="field">dte_email</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_2">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="base.model_res_company"/>
+        <field name="field">dte_service_provider</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_3">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="base.model_res_company"/>
+        <field name="field">dte_resolution_number</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_4">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="base.model_res_company"/>
+        <field name="field">dte_resolution_date</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_5">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="base.model_res_company"/>
+        <field name="field">sii_regional_office_id</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_6">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="base.model_res_company"/>
+        <field name="field">dte_username</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_7">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="base.model_res_company"/>
+        <field name="field">dte_password</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_8">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="base.model_res_company"/>
+        <field name="field">dte_tributarias</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_9">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="base.model_res_company"/>
+        <field name="field">dte_cedibles</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_10">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="l10n_cl_dte.model_account_invoice_reference"/>
+        <field name="field">reference_doc_type</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_11">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="l10n_cl_dte.model_account_invoice_reference"/>
+        <field name="field">reference_doc_code</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_12">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="l10n_cl_dte.model_account_invoice_reference"/>
+        <field name="field">reason</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_13">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="l10n_cl_dte.model_account_invoice_reference"/>
+        <field name="field">invoice_id</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_14">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="l10n_cl_dte.model_account_invoice_reference"/>
+        <field name="field">date</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_15">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="account.model_account_invoice"/>
+        <field name="field">taxes_included</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_16">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="account.model_account_invoice"/>
+        <field name="field">available_journal_document_type_ids</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_17">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="account.model_account_invoice"/>
+        <field name="field">journal_document_type_id</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_18">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="account.model_account_invoice"/>
+        <field name="field">document_type_id</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_19">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="account.model_account_invoice"/>
+        <field name="field">sii_document_number</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_20">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="account.model_account_invoice"/>
+        <field name="field">taxpayer_type_id</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_21">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="account.model_account_invoice"/>
+        <field name="field">vat_for_common_use</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_22">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="account.model_account_invoice"/>
+        <field name="field">no_rec_code</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_23">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="account.model_account_invoice"/>
+        <field name="field">next_invoice_number</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_24">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="account.model_account_invoice"/>
+        <field name="field">use_documents</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_25">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="account.model_account_invoice"/>
+        <field name="field">reference_ids</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_26">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="account.model_account_invoice"/>
+        <field name="field">contact_id</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_27">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="account.model_account_invoice"/>
+        <field name="field">sii_batch_number</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_28">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="account.model_account_invoice"/>
+        <field name="field">sii_barcode</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_29">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="account.model_account_invoice"/>
+        <field name="field">sii_barcode_img</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_30">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="account.model_account_invoice"/>
+        <field name="field">sii_message</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_31">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="account.model_account_invoice"/>
+        <field name="field">sii_xml_dte</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_32">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="account.model_account_invoice"/>
+        <field name="field">sii_xml_request</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_33">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="account.model_account_invoice"/>
+        <field name="field">sii_result</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_34">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="account.model_account_invoice"/>
+        <field name="field">canceled</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_35">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="account.model_account_invoice"/>
+        <field name="field">dte_reception_status</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_36">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="account.model_account_invoice"/>
+        <field name="field">estado_recep_glosa</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_37">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="account.model_account_invoice"/>
+        <field name="field">ticket</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_38">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="account.model_account_invoice"/>
+        <field name="field">claim</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_39">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="account.model_account_invoice"/>
+        <field name="field">claim_description</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_40">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="account.model_account_invoice"/>
+        <field name="field">purchase_to_done</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_41">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="account.model_account_invoice"/>
+        <field name="field">amount_untaxed_global_discount</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_42">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="account.model_account_invoice"/>
+        <field name="field">amount_untaxed_global_recargo</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_43">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="account.model_account_invoice"/>
+        <field name="field">global_descuentos_recargos</field>
+    </record>
+    <record model="localization.fields" id="l10n_cl_dte_44">
+        <field name="chart_account" ref="l10n_cl_chart.cl_chart_template_bmya"/>
+        <field name="model" ref="account.model_account_payment_term"/>
+        <field name="field">dte_sii_code</field>
+    </record>
+
+</odoo>

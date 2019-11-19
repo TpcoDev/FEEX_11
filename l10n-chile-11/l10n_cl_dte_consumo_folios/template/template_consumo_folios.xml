@@ -1,0 +1,44 @@
+<ConsumoFolios xmlns="http://www.sii.cl/SiiDte" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sii.cl/SiiDte ConsumoFolio_v10.xsd" version="1.0">
+    <DocumentoConsumoFolios ID="{{ id }}">
+        <Caratula version="1.0" >
+            <RutEmisor>{{ RutEmisor }}</RutEmisor>
+            <RutEnvia>{{ RutEnvia }}</RutEnvia>
+            <FchResol>{{ FchResol }}</FchResol>
+            <NroResol>{{ NroResol }}</NroResol>
+            <FchInicio>{{ FchInicio }}</FchInicio>
+            <FchFinal>{{ FchFinal }}</FchFinal>
+            {% if Correlativo != 0 %}
+            <Correlativo>{{ Correlativo }}</Correlativo>
+            {% endif %}
+            <SecEnvio>{{ SecEnvio }}</SecEnvio>
+            <TmstFirmaEnv>{{ TmstFirmaEnv }}</TmstFirmaEnv>
+        </Caratula>
+         {% for item in items -%}
+            <Resumen>
+                <TipoDocumento>{{ item.Resumen.TipoDocumento }}</TipoDocumento>
+                <MntNeto>{{ item.Resumen.MntNeto }}</MntNeto>
+                <MntIva>{{ item.Resumen.MntIva }}</MntIva>
+                {% if item.Resumen.TasaIVA -%}
+                <TasaIVA>{{ item.Resumen.TasaIVA }}</TasaIVA>
+                {% endif %}
+                <MntExento>{{ item.Resumen.MntExento }}</MntExento>
+                <MntTotal>{{ item.Resumen.MntTotal }}</MntTotal>
+                <FoliosEmitidos>{{ item.Resumen.FoliosEmitidos }}</FoliosEmitidos>
+                <FoliosAnulados>{{ item.Resumen.FoliosAnulados }}</FoliosAnulados>
+                <FoliosUtilizados>{{ item.Resumen.FoliosUtilizados }}</FoliosUtilizados>
+                {% if item.Resumen[item.Resumen.TipoDocumento + '_folios'] -%}
+                <RangoUtilizados>
+                    <Inicial>{{ item.Resumen[item.Resumen.TipoDocumento + '_folios'].itemUtilizados[0].RangoUtilizados.Inicial }}</Inicial>
+                    <Final>{{ item.Resumen[item.Resumen.TipoDocumento + '_folios'].itemUtilizados[0].RangoUtilizados.Final }}</Final>
+                </RangoUtilizados>
+                {% endif %}
+                {% if item.Resumen[item.Resumen.TipoDocumento + '_folios'] and item.Resumen[item.Resumen.TipoDocumento + '_folios'].itemAnulados -%}
+                <RangoAnulados>
+                    <Inicial>{{ item.Resumen[item.Resumen.TipoDocumento + '_folios'].itemAnulados[0].RangoAnulados.Inicial }}</Inicial>
+                    <Final>{{ item.Resumen[item.Resumen.TipoDocumento + '_folios'].itemAnulados[0].RangoAnulados.Final }}</Final>
+                </RangoAnulados>
+                {% endif %}
+            </Resumen>
+         {% endfor %}
+    </DocumentoConsumoFolios>
+</ConsumoFolios>

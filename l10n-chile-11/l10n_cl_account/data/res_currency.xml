@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model='res.currency' forcecreate="0" id='base.ARS'>
+        <field name="sii_code">1</field>
+        <field name="rounding">0.0001</field>
+        <field name="symbol">$</field>
+    </record>
+    <record model='res.currency' forcecreate="0" id='base.AUD'>
+        <field name="sii_code">36</field>
+        <field name="rounding">0.0001</field>
+        <field name="symbol">$</field>
+    </record>
+    <record model='res.currency' forcecreate="0" id='base.CAD'>
+        <field name="sii_code">6</field>
+        <field name="rounding">0.0001</field>
+        <field name="symbol">$</field>
+    </record>
+    <record model='res.currency' forcecreate="0" id='base.GBP'>
+        <field name="sii_code">102</field>
+        <field name="rounding">0.0001</field>
+        <field name="symbol">£</field>
+    </record>
+    <record model='res.currency' forcecreate="0" id='base.JPY'>
+        <field name="sii_code">72</field>
+        <field name="rounding">0.0001</field>
+        <field name="symbol">¥</field>
+    </record>
+    <record model='res.currency' forcecreate="0" id='base.MXN'>
+        <field name="sii_code">132</field>
+        <field name="rounding">0.0001</field>
+        <field name="symbol">$</field>
+    </record>
+    <record model='res.currency' forcecreate="0" id='base.USD'>
+        <field name="sii_code">13</field>
+        <field name="rounding">0.01</field>
+        <field name="symbol">USD</field>
+        <field name="position">before</field>
+        <field name="decimal_places">6</field>
+    </record>
+    <record model='res.currency' forcecreate="0" id='base.UYU'>
+        <field name="sii_code">26</field>
+        <field name="rounding">0.0001</field>
+        <field name="symbol">$</field>
+    </record>
+    <record model='res.currency' forcecreate="0" id='base.VEF'>
+        <field name="sii_code">134</field>
+        <field name="rounding">0.0001</field>
+        <field name="symbol">Bs.F</field>
+    </record>
+    <record model='res.currency' forcecreate="0" id='base.EUR'>
+        <field name="sii_code">142</field>
+        <field name="rounding">0.01</field>
+        <field name="symbol">€</field>
+        <field name="position">before</field>
+        <field name="decimal_places">6</field>
+    </record>
+    <record model='res.currency' forcecreate="0" id='base.CLP'>
+        <field name="sii_code">142</field>
+        <field name="rounding">1.0</field>
+        <field name="symbol">CL$</field>
+        <field name="position">before</field>
+        <field name="decimal_places">0</field>
+    </record>
+
+    <record model="res.currency" id="base.BOB">
+      <field name="sii_code">4</field>
+      <field name="rounding">0.0001</field>
+      <field name="position"></field>
+      <field name="symbol">Bs.</field>
+    </record >
+    <record model="res.currency" id="base.BRL">
+      <field name="sii_code">5</field>
+      <field name="rounding">0.0001</field>
+      <field name="position"></field>
+      <field name="symbol">R$</field>
+    </record >
+
+
+    <record model="res.currency" id="base.PYG">
+      <field name="sii_code">23</field>
+      <field name="rounding">0.0001</field>
+      <field name="position"></field>
+      <field name="symbol">₲</field>
+    </record >
+    <record model="res.currency" id="base.PEN">
+      <field name="sii_code">24</field>
+      <field name="rounding">0.0001</field>
+      <field name="position"></field>
+      <field name="symbol">S/</field>
+    </record >
+
+
+    <record model="res.currency" id="base.CNY">
+      <field name="sii_code">48</field>
+      <field name="rounding">0.0001</field>
+      <field name="position"></field>
+      <field name="symbol">¥</field>
+    </record >
+
+    <record model="res.currency" id="base.CHF">
+      <field name="sii_code">82</field>
+      <field name="rounding">0.0001</field>
+      <field name="position"></field>
+      <field name="symbol">CHF</field>
+    </record >
+    <record model="res.currency" id="base.NOK">
+      <field name="sii_code">96</field>
+      <field name="rounding">0.0001</field>
+      <field name="position"></field>
+      <field name="symbol">kr</field>
+    </record >
+    <record model="res.currency" id="base.NZD">
+      <field name="sii_code">97</field>
+      <field name="rounding">0.0001</field>
+      <field name="position"></field>
+      <field name="symbol">$</field>
+    </record >
+    <record model="res.currency" id="base.SEK">
+      <field name="sii_code">113</field>
+      <field name="rounding">0.0001</field>
+      <field name="position"></field>
+      <field name="symbol">kr</field>
+    </record >
+    <record model="res.currency" id="base.HKD">
+      <field name="sii_code">127</field>
+      <field name="rounding">0.0001</field>
+      <field name="position"></field>
+      <field name="symbol">$</field>
+    </record >
+    <record model="res.currency" id="base.ZAR">
+      <field name="sii_code">128</field>
+      <field name="rounding">0.0001</field>
+      <field name="position"></field>
+      <field name="symbol">R</field>
+    </record >
+    <record model="res.currency" id="base.COP">
+      <field name="sii_code">129</field>
+      <field name="rounding">0.0001</field>
+      <field name="position"></field>
+      <field name="symbol">$</field>
+    </record >
+    <record model="res.currency" id="base.ECS">
+      <field name="sii_code">130</field>
+      <field name="rounding">0.0001</field>
+      <field name="position"></field>
+      <field name="symbol">S/.</field>
+    </record >
+    <record model="res.currency" id="base.SGD">
+      <field name="sii_code">136</field>
+      <field name="rounding">0.0001</field>
+      <field name="position"></field>
+      <field name="symbol">$</field>
+    </record >
+    <record model="res.currency" id="base.INR">
+      <field name="sii_code">137</field>
+      <field name="rounding">0.0001</field>
+      <field name="position"></field>
+      <field name="symbol">₹</field>
+    </record >
+    <record model="res.currency" id="base.TWD">
+      <field name="sii_code">138</field>
+      <field name="rounding">0.0001</field>
+      <field name="position"></field>
+      <field name="symbol">NT$</field>
+    </record >
+    <record model="res.currency" id="base.AED">
+      <field name="sii_code">139</field>
+      <field name="rounding">0.0001</field>
+      <field name="position"></field>
+      <field name="symbol">د.إ</field>
+    </record >
+    <record model="res.currency" id="OTR">
+      <field name="sii_code">900</field>
+      <field name="name">OTRAS NO ESPECIFICADAS</field>
+      <field name="rounding">0.0001</field>
+      <field name="position"></field>
+      <field name="symbol"> </field>
+    </record >
+</odoo>

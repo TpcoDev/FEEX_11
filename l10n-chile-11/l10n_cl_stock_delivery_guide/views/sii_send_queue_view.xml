@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sii_send_queue_delivery_form" model="ir.ui.view">
+        <field name="name">sii.send.queue.delivery.form</field>
+        <field name="model">sii.send_queue</field>
+        <field name="inherit_id" ref="l10n_cl_dte.view_sii_send_queue_form"/>
+        <field name="arch" type="xml">
+            <field name="invoice_ids" position="after">
+                <field name="picking_ids" attrs="{'invisible': [('model_selection', '!=', 'stock.picking')]}"/>
+            </field>
+        </field>
+    </record>
+    <record id="sii_send_queue_delivery_tree" model="ir.ui.view">
+        <field name="name">sii.send.queue.delivery.tree</field>
+        <field name="model">sii.send_queue</field>
+        <field name="inherit_id" ref="l10n_cl_dte.view_sii_send_queue_tree"/>
+        <field name="arch" type="xml">
+            <field name="invoice_ids" position="after">
+                <field name="picking_ids" attrs="{'invisible': [('model_selection', '!=', 'stock.picking')]}"/>
+            </field>
+        </field>
+    </record>
+</odoo>

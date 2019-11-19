@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_electronic_stock_picking_form" model="ir.ui.view">
+            <field name="name">l10n_cl.stock_picking.form</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header/button[@name='button_validate']" position="after">
+                    <button name="action_done_delivery_guide"
+                            string="Guia de Despacho" groups="stock.group_stock_user" type="object"
+                            attrs="{'invisible': ['|','|',('state', 'not in', ['done']),
+                            ('use_documents', '=', False),
+                            ('document_number', '!=', False)]}"
+                            class="oe_highlight"/>
+                </xpath>
+                <field name="partner_id" position="after">
+                    <field name="activity_description" />
+                    <field name="partner_turn" domain="[('partner_ids', '=', partner_id)]" options="{'no_create': True}" invisible="True"/>
+                    <field name="contact_id" />
+                </field>
+
+                <field name="name" position="after">
+                    - <field name="document_number"/>
+                </field>
+                <field name="origin" position="after">
+                    <field name="currency_id"/>
+                    <!--<field name="product_pack_installed" invisible="True"/>
+                    <field name="hide_kit_components" attrs="{'invisible': [('product_pack_installed', '=', False)]}"/>-->
+                    <field name="sii_result" invisible="1"/>
+                    <field name="use_documents" invisible="True"/>
+                    <field name="sii_document_number" invisible="True"/>
+                    <field name="picking_document_type_id" attrs="{'invisible': ['|', ('use_documents', '=', False), ('sii_result', '!=', False)]}"/>
+                </field>
+
+                <xpath expr="//sheet/notebook/page/field[@name='move_lines']/tree/field[@name='product_uom']" position="after">
+                  <field name="name"/>
+                  <field name="delivery_price_unit"/>
+                  <field name="price_untaxed" invisible="True" />
+                  <field name="move_line_tax_ids" widget="many2many_tags"  domain="[('type_tax_use','=','sale'),('company_id','=',parent.company_id)]"/>
+                  <field name="discount" />
+                  <field name="subtotal"/>
+                  <field name="currency_id" invisible="1"/>
+                </xpath>
+                <field name="move_lines" position="after">
+                  <group attres="{'invisible':{[('mover_reason','not in',['2','3','8','9'])]}}">
+                    <field name="amount_untaxed"/>
+                    <field name="amount_tax"/>
+                    <field name="amount_total" />
+                    <field name="currency_id" invisible="1"/>
+                  </group>
+                </field>
+                <xpath expr="//notebook/page[last()]" position="after">
+                    <page string="Electronic Document" name="electronic_document">
+                          <!--attrs="{'invisible': ['|', ('sii_result', 'in', ['', False]), ('use_documents', '=', False)]}"-->
+                        <header>
+                            <button string="Download XML" type="object"  name="get_xml_file"   attrs="{'invisible': True}"/>
+                            <!--attrs="{'invisible':['|',('state', 'not in', ['done']),('sii_result','in',['','NoEnviado'])]}"-->
+                            <button string="Send XML" type="object" class="oe_highlight" name="do_dte_send_picking" attrs="{'invisible':['|',('state', 'not in', ['done']),('sii_result', 'not in', ['NoEnviado'])]}"/>
+                            <button string="ReSend XML" type="object" class="oe_highlight" name="do_dte_send_picking" attrs="{'invisible':['|',('state', 'not in', ['done']),('sii_result', 'not in', ['Rechazado'])]}"/>
+                            <button string="Ask for DTE" type="object" class="oe_highlight" name="ask_for_dte_status" attrs="{'invisible':['|',('state', 'not in', ['done']),('sii_result','in',['','NoEnviado'])]}"/>
+                            <field name='sii_result' widget="statusbar"/>
+                        </header>
+                        <group col="4" colspan="4">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <label for="picking_send_queue_id"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <field name="picking_send_queue_id"/>
+                                </div>
+                                <div class="col-md-4">
+                                    <button style="margin-right: 6px;" string="Procesar Ahora"
+                                            type="object" name="cron_process_queue"
+                                            attrs="{'invisible':[
+                                                '|', ('state', 'in', ['draft']),
+                                                ('sii_result', 'in', ['Rechazado', 'Aceptado'])]}"
+                                            context="{'kind': 'dte'}" icon="fa-upload"
+                                            class="btn btn-sm oe_link"/>
+                                </div>
+                            </div>
+                        </group>
+                        <group>
+                            <field name="invoiced" />
+                            <field name="responsable_envio" invisible="True" readonly="True"/>
+                            <field name="canceled" />
+                            <field name='sii_batch_number' readonly="1"/>
+                            <field name='sii_xml_request' attrs="{'invisible':[('sii_result', '=', '')]}" readonly="1"/>
+                            <field name='sii_barcode_img' widget="image" attrs="{'invisible':[('sii_result', '=', '')]}" readonly="1"/>
+                            <field name='sii_message' attrs="{'invisible':[('sii_result', 'in', ['','NoEnviado'])]}" readonly="1"/>
+                            <field name='sii_xml_dte' attrs="{'invisible':[('sii_result', '=', '')]}" readonly="1"/>
+                        </group>
+                    </page>
+                </xpath>
+                <page name="extra" position="inside">
+                    <field name="reference_ids" mode="tree" attrs="{'readonly':[('sii_result', '!=', False)]}">
+                      <form>
+                        <group>
+                          <field name="origin" />
+                          <field name="reference_doc_type"/>
+                          <field name="date" />
+                        </group>
+                      </form>
+                      <tree>
+                        <field name="origin" />
+                        <field name="reference_doc_type"/>
+                        <field name="date" />
+                      </tree>
+                    </field>
+                </page>
+
+                <field name="company_id" position="after">
+                    <field name="turn_issuer"
+                           options="{'no_create': True}"/>
+                </field>
+                <field name="name" position="after">
+                        <label string="- Next Number: " attrs="{'invisible': ['|',('name','!=',False),('state','!=','draft')]}" class="oe_inline"/>
+                        <field name="next_number" attrs="{'invisible': ['|',('name','!=',False),('state','!=','draft')]}" class="oe_inline"/>
+                </field>
+                <field name="move_type" position="after">
+                  <field name="transport_type" attrs="{'readonly':[('sii_result', '!=', False)], 'required':[('use_documents', '=', True)]}"/>
+                  <field name="move_reason" attrs="{'readonly':[('sii_result', '!=', False)], 'required':[('use_documents', '=', True)]}"/>
+                </field>
+                <field name="carrier_id" position="attributes">
+                  <attribute name="attrs">{'invisible':[('transport_type', '!=', '3')], 'required':[('transport_type', '=', '3'), ('use_documents', '=', True)]}</attribute>
+                </field>
+                <field name="carrier_id" position="after">
+                  <field name="vehicle" attrs="{'readonly':[('sii_result', '!=', False)], 'required':[('transport_type','=', '2'), ('use_documents', '=', True)], 'invisible':[('transport_type','!=','2')]}"/>
+                  <field name="driver_id" attrs="{'readonly':[('sii_result', '!=', False)], 'required':[('transport_type','=', '2'), ('use_documents', '=', True)], 'invisible':[('transport_type','!=','2')]}"/>
+                  <field name="car_plate" attrs="{'readonly':[('sii_result', '!=', False)], 'required':[('transport_type','in', ['2']), ('use_documents', '=', True)]}"/>
+                </field>
+            </field>
+        </record>
+        <record id="electronic_stock_picking_tree" model="ir.ui.view">
+            <field name="name">l10n_cl.stock_picking.tree</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.vpicktree"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="document_number"/>
+                </field>
+                <field name="origin" position="after">
+                    <field name="reference_ids"/>
+                </field>
+            </field>
+        </record>
+        <record id="view_move_picking_tree_valued" model="ir.ui.view">
+            <field name="name">stock.move.tree.valued</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_picking_tree"/>
+            <field name="arch" type="xml">
+              <field name="product_uom" position="after">
+                <field name="name"/>
+                <field name="delivery_price_unit"/>
+                <field name="move_line_tax_ids" widget="many2many_tags" domain="[('type_tax_use','=','sale'),('company_id','=',parent.company_id)]"/>
+                <field name="discount" />
+                <field name="subtotal"/>
+                <field name="currency_id" invisible="1"/>
+              </field>
+            </field>
+        </record>
+
+        <record id="view_move_picking_form_valued" model="ir.ui.view">
+            <field name="name">stock.move.form.valued</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group/group[last()]" position="before">
+                    <group>
+                      <field name="name"/>
+                        <field name="delivery_price_unit"/>
+                        <field name="move_line_tax_ids" widget="many2many_tags" domain="[('type_tax_use','=','sale'),('company_id','=',parent.company_id)]"/>
+                        <field name="discount"/>
+                        <field name="currency_id" invisible="1"/>
+                    </group>
+                    <group>
+                        <field name="price_untaxed"/>
+                        <field name="subtotal"/>
+                        <field name="currency_id" invisible="1"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="view_stock_location_form_electronic_stock_picking_class" model="ir.ui.view">
+            <field name="name">l10n_cl.stock.location.tree</field>
+            <field name="model">stock.location</field>
+            <field name="inherit_id" ref="stock.view_location_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='localization']" position="before">
+                    <field name="l10n_cl_localization" invisible="1"/>
+                    <group string="Delivery Guide" attrs="{'invisible': [('l10n_cl_localization', '=', False)]}">
+                        <field name="document_type_id"/>
+                        <field name="sequence_id" placeholder="Select or create a sequence"
+                               attrs="{'invisible': [('document_type_id', '=', False)], 'required': [('document_type_id', '!=', False)]}"/>
+                        <field name="sii_code" attrs="{'invisible': [('document_type_id', '=', False)]}"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,13 @@
+.facto-icon{
+    z-index: 20;
+    border-width: 0px;
+    width: 25px;
+    height: 25px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    background-repeat: no-repeat;
+    background: url(../img/cash.png);
+    position: relative;
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Account Tax Groups-->
+        <record id="l10n_cl.tax_group_iva_19" model="account.tax.group">
+            <field name="name">IVA 19%</field>
+            <field name="type">tax</field>
+            <field name="amount">0.0</field>
+            <field name="tax">vat</field>
+            <field name="application">national_taxes</field>
+        </record>
+        <record id="l10n_cl_chart.tax_group_impuestos_especificos" model="account.tax.group">
+            <field name="name">Impuestos Específicos</field>
+            <field name="type">tax</field>
+            <field name="amount">0.0</field>
+            <field name="tax">other</field>
+            <field name="application">national_taxes</field>
+        </record>
+        <record id="l10n_cl_chart.tax_group_ila" model="account.tax.group">
+            <field name="name">ILA</field>
+            <field name="type">tax</field>
+            <field name="amount">0.0</field>
+            <field name="tax">other</field>
+            <field name="application">national_taxes</field>
+        </record>
+        <record id="l10n_cl_chart.tax_group_2da_categ" model="account.tax.group">
+            <field name="name">Retención de 2da Categoría</field>
+            <field name="type">tax</field>
+            <field name="amount">0.0</field>
+            <field name="tax">other</field>
+            <field name="application">national_taxes</field>
+        </record>
+        <record id="l10n_cl_chart.tax_group_retenciones" model="account.tax.group">
+            <field name="name">Retenciones</field>
+            <field name="type">withholding</field>
+            <field name="amount">0.0</field>
+            <field name="tax">other</field>
+            <field name="application">national_taxes</field>
+        </record>
+    </data>
+</odoo>

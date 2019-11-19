@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="account_batch_payments_form" model="ir.ui.view">
+        <field name="name">account.batch.payments.form</field>
+        <field name="model">account.batch.payments</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button string="Get Invoices" type="action" name="%(action_batch_payment_open_inv_wizard)d"
+                            states="draft"/>
+                    <button string="Request for Approval" type="object" name="action_wait"
+                            states="draft" class="oe_highlight" />
+                    <button string="Approve" type="object" name="action_approve"
+                            states="wait" class="oe_highlight" groups="account.group_account_manager" />
+                    <button string="Cancel" type="object" name="action_cancel"
+                            states="wait" />
+                    <button string="To Draft" type="object" name="action_draft"
+                            states="wait,cancelled" />
+                    <button string="Export XLS" type="object" name="action_export_xls"
+                            states="approved" class="oe_highlight" />
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group col="4">
+                            <field name="date" required="1"/>
+                            <field name="journal_id" domain="[
+                            ('type', 'in', ['bank']),
+                            ('bank_id', '!=', False)]" required="1"/>
+                            <field name="total_amount"/>
+                            <notebook colspan="4">
+                                <page string="Invoices">
+                                    <field name="line_ids" nolabel="1" colspan="4" required="1"
+                                        attrs="{'readonly':[('state','not in',['draft'])]}">
+                                        <tree editable="1" create="false">
+                                            <field name="invoice_id" required="1"/>
+                                            <field name="partner_id"/>
+                                            <field name="balance_amount"/>
+                                            <field name="state"/>
+                                        </tree>
+                                    </field>
+                                </page>
+                                <page string="Payments" states="approved">
+                                    <field name="payment_ids" nolabel="1" colspan="4" readonly="1"/>
+                                </page>
+                        </notebook>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="account_batch_payments_tree" model="ir.ui.view">
+        <field name="name">account.batch.payments.tree</field>
+        <field name="model">account.batch.payments</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="date"/>
+                <field name="journal_id"/>
+                <field name="total_amount"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_batch_supplier_payment">
+            <field name="name">Batch Supplier Payment</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.batch.payments</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Batch Payments"
+              groups="account.group_account_manager,account.group_account_user"
+              id="menu_batch_supplier_payments"
+              action="action_batch_supplier_payment"
+              parent="account.menu_finance_payables"
+              sequence="30"/>
+
+</odoo>

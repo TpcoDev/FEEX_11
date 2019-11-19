@@ -1,0 +1,3 @@
+ingadhoc-account-financial-tools https://github.com/bmya/account-financial-tools.git
+ingadhoc-miscellaneous https://github.com/bmya/miscellaneous.git
+oca-partner-contact https://github.com/bmya/partner-contact.git

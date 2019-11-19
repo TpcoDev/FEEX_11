@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_backend" name="account assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/l10n_cl_monetary_correction/static/src/less/account_asset.less"/>
+            <script type="text/javascript" src="/l10n_cl_monetary_correction/static/src/js/account_asset.js"></script>
+        </xpath>
+    </template>
+</odoo>

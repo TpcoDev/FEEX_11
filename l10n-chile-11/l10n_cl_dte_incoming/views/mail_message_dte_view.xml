@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="dte_view_form" model="ir.ui.view">
+        <field name="name">dte.form</field>
+        <field name="model">mail.message.dte</field>
+        <field name="arch" type="xml">
+            <form string="Mail DTE Process">
+                <header>
+                    <field name="inner_status" widget="statusbar"/>
+                    <button name="sender_data" string="Preproceso"
+                            type="object" attrs="{'invisible': ['inner_status', 'not in', 'new']}"/>
+                    <button name="process_message" string="Procesar Envío"
+                    atts="{'invisible': [('company_id', '=' False)]}"
+                    type="object" />
+                    <button name="reject_document" string="Rechazar"
+                       atts="{'invisible': [('company_id', '=' False)]}"
+                       type="object"/>
+
+                </header>
+                <sheet>
+                    <group col="4">
+                        <field name="name"/>
+                        <field name="origin_type"/>
+                        <field name="reception_response_number"/>
+                        <field name="mail_id"/>
+                        <field name="email_from"/>
+                        <field name="company_id"/>
+                        <field name="rut_issuer"/>
+                        <field name="partner_id" domain="[('pointless_main_id_number', '=', rut_issuer)]"/>
+                    </group>
+                    <notebook>
+                        <page string="Documentos">
+                            <field name="document_ids" editable="bottom" widget="one2many">
+                                <tree editable="top/bottom">
+                                    <field name="date" />
+                                    <field name="document_type_id" />
+                                    <field name="number" />
+                                    <field name="new_partner" />
+                                    <field name="partner_id" />
+                                    <field name="dte_id" invisible="True"/>
+                                    <field name="amount" />
+                                    <field name="currency_id" />
+                                    <field name="invoice_line_ids" options="{'no_create_edit':True}"/>
+                                    <field name="company_id" />
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="search_dte_view" model="ir.ui.view">
+        <field name="name">search.dte.view</field>
+        <field name="model">mail.message.dte</field>
+        <field name="arch" type="xml">
+            <search string="Search Mail Message Dte">
+                <field name="inner_status" string="Inner Status" filter_domain="[(1,'=',1)]"/>
+                <separator/>
+                <filter string="Estado de Flujo" name="inner_status" domain="[('inner_status','in',['new', 'pre_processed'])]" help="Solo los que no se procesaron"/>
+            </search>
+        </field>
+    </record>
+    <record id="dte_view_tree" model="ir.ui.view">
+        <field name="name">dte.tree</field>
+        <field name="model">mail.message.dte</field>
+        <field name="arch" type="xml">
+            <tree string="Dtes">
+                <field name="create_date"/>
+                <field name="name"/>
+                <field name="email_from"/>
+                <field name="origin_type"/>
+                <field name="document_ids"/>
+                <field name="company_id" />
+                <field name="partner_id" />
+                <field name="reception_response_number"/>
+                <field name="inner_status"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="act_xml_recept" model="ir.actions.act_window">
+        <field name="type">ir.actions.act_window</field>
+        <field name="name">XML Recepcionados</field>
+        <field name="res_model">mail.message.dte</field>
+        <field name="view_type">form</field>
+        <field name="context">{"search_default_inner_status":1}</field>
+        <field name="target">current</field>
+    </record>
+
+    <menuitem id="menu_supplier_xml" parent="account.menu_finance_payables" sequence="12" name="Recepcion de XML de Proveedores"/>
+
+    <menuitem
+        name="XML Recibidos"
+        action="act_xml_recept"
+        id="menu_action_xml_recept"
+        parent="menu_supplier_xml"
+        sequence="15"/>
+
+    <act_window id="action_masive_validate"
+        multi="True"
+        key2="client_action_multi"
+        name="Validar Documentos"
+        res_model="dte.validate.wizard"
+        src_model="account.invoice"
+        view_mode="form"
+        target="new"
+        view_type="form" />
+
+    <record id="action_preprocess" model="ir.actions.server">
+        <field name="name">Incoming XML Preprocess</field>
+        <field name="model_id" ref="model_mail_message_dte"/>
+        <field name="state">code</field>
+        <field name="code">
+            records.sender_data()
+        </field>
+    </record>
+
+</odoo>

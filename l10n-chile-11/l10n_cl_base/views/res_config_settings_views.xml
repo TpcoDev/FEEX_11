@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<!-- Base Config Settings Form View -->
+        <record id="res_config_settings_view_chilean_loc_form" model="ir.ui.view">
+            <field name="name">res.config.settings.view.chilean.loc.form</field>
+            <field name="model">res.config.settings</field>
+            <field name="priority" eval="90"/>
+            <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('settings')]" position="inside">
+                    <div class="app_settings_block" data-string="Chilean Localization"
+                         string="Chilean Localization"
+                         data-key="l10n_cl_base">
+                        <h2>Partners Information</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-xs-12 col-md-6 o_setting_box" id="l10n_cl_counties">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_l10n_cl_counties"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label string="Install Chilean Counties"/>
+                                    <div class="text-muted">
+                                        Install Chilean Counties. Add an additional field for counties, and select
+                                        city and province automatically.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box" id="l10n_cl_partner_activities">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_l10n_cl_partner_activities"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label string="Enable economical activities on partners"/>
+                                    <div class="text-muted">
+                                        Enable economical activities for your own company and on partners and set the way you want to handle business turns
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 col-md-offset-6 o_setting_box" id="l10n_cl_partner_activities1"
+                            attrs="{'invisible': [('module_l10n_cl_partner_activities', '=', False)]}">
+                                <div class="o_setting_left_pane">
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label class="o_form_label" string="How to manage business turns"/>
+                                    <div class="text-muted">
+                                        Decide how to manage your customers' business turns
+                                    </div>
+                                    <div class="mt8">
+                                        <div class="col-xs-12 col-md-12 o_field_radio o_field_widget
+                                            o_vertical o_required_modifier o_light_label" style="width: 100%;" name="activities_opt">
+                                            <field style="width: 100%;" name="activities_opt" widget="radio"/>
+                                            <div attrs="{'invisible': [('activities_opt', '=', 'activity_description')]}">
+                                                <div class="o_setting_left_pane">
+                                                    <field name="activity_description_invisible"/>
+                                                </div>
+                                                <div class="o_setting_right_pane">
+                                                    <label string="Activity description invisible"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--<div class="col-xs-12 col-md-6 o_setting_box" id="l10n_cl_partner_activities1"
+                                attrs="{'invisible': [('module_l10n_cl_partner_activities', '=', False)]}">
+                                <div class="o_setting_left_pane"/>
+                                <div class="o_setting_right_pane">
+                                    <div class="col-xs-12 col-md-12 o_field_radio o_field_widget
+                                    o_vertical o_required_modifier o_light_label" name="activities_opt">
+                                        <field name="activities_opt" widget="radio"/>
+                                        <div class="col-xs-12 col-md-12"
+                                            attrs="{'invisible': [('activities_opt', '=', 'activity_description')]}">
+                                            <div class="o_setting_left_pane">
+                                                <field name="activity_description_invisible"/>
+                                            </div>
+                                            <div class="o_setting_right_pane">
+                                                <label string="Activity description invisible"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>-->
+                        </div>
+                        <h2>Accounting, Taxes and Invoicing</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-xs-12 col-md-6 o_setting_box" id="l10n_cl_chart">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_l10n_cl_chart"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label string="Install BMyA's COA"/>
+                                    <div class="text-muted">
+                                        Install BMyA's Chart of Account, based on Chilean SVS' COA, plus accounts
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box" id="l10n_cl_account">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_l10n_cl_account"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label string="Centralized sales journal for multiple type of document stubs"/>
+                                    <div class="text-muted">
+                                        Install BMyA's l10n_cl_account, to provide assistance an relationship between
+                                        sale/purchase journals and fiscal type of documents.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h2>Banks and Miscellaneous</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-xs-12 col-md-6 o_setting_box" id="l10n_cl_banks_sbif">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_l10n_cl_banks_sbif"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label string="Add Official List of Banks in Chile, According to SBIF"/>
+                                    <div class="text-muted">
+                                        This adds a list of all recognized banks in Chile, including in each the SBIF Code
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box" id="l10n_cl_financial_indicators">
+                                 <div class="o_setting_left_pane">
+                                    <field name="module_l10n_cl_financial_indicators"/>
+                                 </div>
+                                 <div class="o_setting_right_pane">
+                                    <label string="Update Daily quotations for currencies (USD, EUR) and for UF.
+                                    Also update quotation for UTM monthly, from SBIF Webservices"/>
+                                    <div class="text-muted">
+                                        You can suscribe to SBIF Webservices and update these indexes automatically each day. Monthly for UTM.
+                                    </div>
+                                    <div class="content-group"
+                                         attrs="{'invisible': [('module_l10n_cl_financial_indicators', '=', False)]}">
+                                        <div class="mt16">
+                                            <label string="API Token" class="o_light_label"/>
+                                            <field name="api_sbif_token"/>
+                                            <div class="text-muted"
+                                                 attrs="{'invisible': [('api_sbif_token', '!=', False)]}">
+                                                Don't you have your SBIF Token Yet? Follow the instructions here.
+                                            </div>
+                                            <a name="api_st"
+                                               class="btn btn-sm oe_link"
+                                               attrs="{'invisible': [('api_sbif_token', '!=', False)]}"
+                                               href="http://api.sbif.cl/api/contactanos.jsp" target="_blank">
+                                                <i class="fa fa-fw o_button_icon fa-arrow-right"></i>
+                                                <span>Get SBIF's Token</span></a>
+                                        </div>
+
+                                    </div>
+                                 </div>
+                            </div>
+                        </div>
+                        <h2>Electronic Invoicing</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-xs-12 col-md-6 o_setting_box" id="l10n_cl_dte">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_l10n_cl_dte"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label string="Enable as electronic invoicing issuer"/>
+                                    <div class="text-muted">
+                                        Enable electronic invoicing for sales. You can select the electronic invoicing method
+                                    </div>
+                                    <div attrs="{'invisible': [('module_l10n_cl_dte', '=', False)]}" id="l10n_cl_dte1">
+                                        <div class="text-muted">
+                                            Automatic Sending
+                                        </div>
+                                        <div class="row mt16 o_settings_container">
+                                            <div class="col-xs-12 col-md-12 o_setting_box" id="envio_dte" style="width: 100%">
+                                                <div class="o_setting_left_pane" style="width: 10%">
+                                                    <field name="auto_send_dte" />
+                                                </div>
+                                                <div class="o_setting_right_pane" style="width: 90%">
+                                                    <label string="Automatically send to SII" for="auto_send_dte"/>
+                                                    <div class="text-muted">
+                                                        Elapsed time for automatic send to SII in minutes
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-md-12 o_setting_box" id="envio_email" style="width: 100%">
+                                                <div class="o_setting_left_pane" style="width: 10%">
+                                                    <field name="auto_send_email" />
+                                                </div>
+                                                <div class="o_setting_right_pane" style="width: 90%">
+                                                    <label string="Automatically send to customer" for="auto_send_email"/>
+                                                    <div class="text-muted">
+                                                        Automatic sending of documents to customers
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-md-6 o_setting_box" id="l10n_cl_docsonline_print"
+                                attrs="{'invisible': [('module_l10n_cl_dte', '=', False)]}" >
+                                <div class="o_setting_left_pane">
+                                    <field name="module_l10n_cl_docsonline_print"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label string="Enable connection from www.documentosonline.cl"/>
+                                    <div class="text-muted">
+                                        Enable backup and or printing from www.documentosonline.cl
+                                    </div>
+                                    <div attrs="{'invisible': [('module_l10n_cl_docsonline_print', '=', False)]}" id="l10n_cl_dte1">
+                                        <div class="text-muted">
+                                            Premium Service
+                                        </div>
+                                        <div class="row mt16 o_settings_container">
+                                            <div  attrs="{'invisible': [('module_l10n_cl_docsonline_print', '=', False)]}" class="col-xs-12 col-md-12 o_setting_box" id="l10n_cl_docsonline_factoring" style="width: 100%">
+                                                <div class="o_setting_left_pane" style="width: 10%">
+                                                    <field name="module_l10n_cl_docsonline_partner" />
+                                                </div>
+                                                <div class="o_setting_right_pane" style="width: 90%">
+                                                    <label string="Get your customers' and suppliers' data from www.documentosonline.cl" for="module_l10n_cl_docsonline_partner"/>
+                                                    <div class="text-muted">
+                                                        Simply writing the vat of your suppliers and customers you can check www.documentosonline.cl
+                                                        to get: partner turns, dte email data, and more information.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div  attrs="{'invisible': [('module_l10n_cl_docsonline_print', '=', False)]}" class="col-xs-12 col-md-12 o_setting_box" id="l10n_cl_docsonline_factoring" style="width: 100%">
+                                                <div class="o_setting_left_pane" style="width: 10%">
+                                                    <field name="module_l10n_cl_docsonline_factoring" />
+                                                </div>
+                                                <div class="o_setting_right_pane" style="width: 90%">
+                                                    <label string="Receive factoring offers" for="module_l10n_cl_docsonline_factoring"/>
+                                                    <div class="text-muted">
+                                                        Receive factoring offers from www.documentosonline.cl
+                                                        and hand over your invoices using www.documentosonline.cl connection to the best
+                                                        factoring companies in the market.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="action_chilean_base_configuration" model="ir.actions.act_window">
+            <field name="name">Configure</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.config.settings</field>
+            <field name="view_id" ref="res_config_settings_view_chilean_loc_form"/>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+            <!--<field name="context">{'module' : 'account_invoicing'}</field>-->
+        </record>
+
+	</data>
+</odoo>

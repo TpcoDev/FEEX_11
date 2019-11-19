@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model='res.country.group' id='not_chile'>
+            <field name='name'>No Chile</field>
+            <field name='country_ids' search="[('code', '!=', 'CL')]"/>
+        </record> 
+    </data>
+</openerp>

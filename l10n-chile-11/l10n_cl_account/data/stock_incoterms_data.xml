@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="stock.incoterm_EXW" model="stock.incoterms">
+            <field name="sii_code">3</field>
+        </record>
+        <record id="stock.incoterm_FCA" model="stock.incoterms">
+            <field name="sii_code">10</field>
+        </record>
+        <record id="stock.incoterm_FAS" model="stock.incoterms">
+            <field name="sii_code">4</field>
+        </record>
+        <record id="stock.incoterm_FOB" model="stock.incoterms">
+            <field name="sii_code">5</field>
+        </record>
+        <record id="stock.incoterm_CFR" model="stock.incoterms">
+            <field name="sii_code">2</field>
+        </record>
+        <record id="stock.incoterm_CIF" model="stock.incoterms">
+            <field name="sii_code">1</field>
+        </record>
+        <record id="stock.incoterm_CPT" model="stock.incoterms">
+            <field name="sii_code">11</field>
+        </record>
+        <record id="stock.incoterm_CIP" model="stock.incoterms">
+            <field name="sii_code">12</field>
+        </record>
+        <record id="stock.incoterm_DAF" model="stock.incoterms">
+            <field name="sii_code">13</field>
+        </record>
+        <record id="stock.incoterm_DES" model="stock.incoterms">
+            <field name="sii_code">14</field>
+        </record>
+        <record id="stock.incoterm_DEQ" model="stock.incoterms">
+            <field name="sii_code">15</field>
+        </record>
+        <record id="stock.incoterm_DDU" model="stock.incoterms">
+            <field name="sii_code">16</field>
+        </record>
+        <record id="stock.incoterm_DAT" model="stock.incoterms">
+            <field name="sii_code"></field>
+        </record>
+        <record id="stock.incoterm_DAP" model="stock.incoterms">
+            <field name="sii_code"></field>
+        </record>
+        <record id="stock.incoterm_DDP" model="stock.incoterms">
+            <field name="sii_code">9</field>
+        </record>
+    </data>
+</odoo>

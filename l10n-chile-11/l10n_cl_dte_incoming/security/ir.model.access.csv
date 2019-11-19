@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mail_message_dte_document_line,access_mail_message_dte_document_line,model_mail_message_dte_document_line,account.group_account_manager,1,1,1,0
+access_mail_message_dte,access_mail_message_dte,model_mail_message_dte,account.group_account_manager,1,1,1,0
+access_mail_message_dte_document,access_mail_message_dte_document,model_mail_message_dte_document,account.group_account_manager,1,1,1,0

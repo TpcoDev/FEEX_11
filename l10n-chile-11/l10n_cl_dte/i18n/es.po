@@ -1,0 +1,2157 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_cl_dte
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e-20180814\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-01 21:39+0000\n"
+"PO-Revision-Date: 2018-11-01 18:48-0300\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.2\n"
+"Last-Translator: \n"
+"Language: es\n"
+
+#. module: l10n_cl_dte
+#: model:mail.template,body_html:l10n_cl_dte.email_template_receipt_ack
+msgid ""
+"\n"
+"            \n"
+"                <header>\n"
+"                <strong>Facturación Electrónica - Acuse de Recibo de Envio "
+"de DTE ${object.name}</strong>\n"
+"                </header>\n"
+"                <p>En el archivo adjunto puede encontrar el resultado del "
+"proceso de revisión y\n"
+"                validación de un envío de Documentos Tributarios "
+"Electronicos que Usted\n"
+"                realizó.</p>\n"
+"                <br />\n"
+"                <p>Esta es una aplicación automática, por lo tanto no "
+"conteste este correo ni\n"
+"                haga consultas o comentarios a la dirección de origen.</p>\n"
+"                <br /><br /><br /><br />\n"
+"                <p>Enviado Usando Odoo</p>\n"
+"            \n"
+"            "
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:mail.template,body_html:l10n_cl_dte.email_template_receipt_commercial_accept
+msgid ""
+"\n"
+"            \n"
+"                <header>\n"
+"                <strong>Facturación Electrónica - Respuesta de Aceptación "
+"Comercial - ${object.display_name}</strong>\n"
+"                </header>\n"
+"                <p>En el archivo adjunto puede encontrar la respuesta de "
+"aceptación comercial\n"
+"                de su(s) Documento(s) Tributarios Electronico(s).</p>\n"
+"                <br /><br /><br /><br />\n"
+"                <p>Enviado Usando Odoo</p>\n"
+"            \n"
+"            "
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:mail.template,body_html:l10n_cl_dte.email_template_receipt_of_goods
+msgid ""
+"\n"
+"            \n"
+"                <header>\n"
+"                <strong>Facturación Electrónica - Respuesta de Recepción de "
+"Mercaderías - ${object.display_name}</strong>\n"
+"                </header>\n"
+"                <p>En el archivo adjunto puede encontrar la respuesta de "
+"recepción de mercaderías o servicios\n"
+"                correspondientes a su(s) Documento(s) Tributarios "
+"Electronico(s).</p>\n"
+"                <br /><br /><br /><br />\n"
+"                <p>Enviado Usando Odoo</p>\n"
+"            \n"
+"            "
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:mail.template,body_html:l10n_cl_dte.email_template_commercial_reject
+msgid ""
+"\n"
+"            \n"
+"                <header>\n"
+"                <strong>Facturación Electrónica - Respuesta de Rechazo "
+"Comercial ${object.name}</strong>\n"
+"                </header>\n"
+"                <p>En el archivo adjunto puede encontrar el resultado del "
+"proceso de revisión y\n"
+"                rechazo de un envío de Documentos Tributarios Electronicos "
+"que Usted\n"
+"                realizó.</p>\n"
+"                <br />\n"
+"                <p>Esta es una aplicación automática, por lo tanto no "
+"conteste este correo ni\n"
+"                haga consultas o comentarios a la dirección de origen.</p>\n"
+"                <br /><br /><br /><br />\n"
+"                <p>Enviado Usando Odoo</p>\n"
+"            \n"
+"            "
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:mail.template,body_html:l10n_cl_dte.email_template_edi_invoice
+msgid ""
+"\n"
+"                <div style=\"font-family: 'Arial', Verdana, Lucica Grande, "
+"Ubuntu, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-"
+"color: #FFF; \">\n"
+"                    <p>Hello ${object.partner_id.name},</p>\n"
+"                    <p>A new invoice is available for you: </p>\n"
+"                    <p style=\"border-left: 1px solid #8e0000; margin-left: "
+"30px;\">\n"
+"                       &nbsp;&nbsp;<strong>REFERENCES</strong><br />\n"
+"                       &nbsp;&nbsp;Invoice number: <strong>${object."
+"display_name}</strong><br />\n"
+"                       &nbsp;&nbsp;Invoice total: <strong>${object."
+"currency_id.name} ${str(object.amount_total)[:-2]}</strong><br />\n"
+"                       &nbsp;&nbsp;Invoice date: ${object.date_invoice}<br /"
+">\n"
+"                       % if object.origin:\n"
+"                       &nbsp;&nbsp;Order reference: ${object.origin}<br />\n"
+"                       % endif\n"
+"                       % if object.user_id:\n"
+"                       &nbsp;&nbsp;Your contact: <a href=\"mailto:${object."
+"user_id.email or ''}?subject=Invoice%20${object.number}\">${object.user_id."
+"name}</a>\n"
+"                       % endif\n"
+"                    </p>\n"
+"                    % if object.paypal_url:\n"
+"                    <br/>\n"
+"                    <p>It is also possible to directly pay with Paypal:</p>\n"
+"                        <a style=\"margin-left: 120px;\" href=\"${object."
+"paypal_url}\">\n"
+"                            <img class=\"oe_edi_paypal_button\" src=\"/"
+"account/static/src/img/btn_paynowcc_lg.gif\"/>\n"
+"                        </a>\n"
+"                    % endif\n"
+"                    <br/>\n"
+"                    <p>If you have any question, do not hesitate to contact "
+"us.</p>\n"
+"                    <p>Thank you for choosing ${object.company_id.name or "
+"'us'}!</p>\n"
+"                    <br/>\n"
+"                    <br/>\n"
+"                    <div style=\"width: 375px; margin: 0px; padding: 0px; "
+"background-color: #8E0000; border-top-left-radius: 5px 5px; border-top-right-"
+"radius: 5px 5px; background-repeat: repeat no-repeat;color: #fff\">\n"
+"                        <h3 style=\"margin: 0px; padding: 2px 14px; font-"
+"size: 12px;\">\n"
+"                            <strong style=\"text-transform:uppercase; color:"
+"#ccc\">${object.company_id.name}</strong></h3>\n"
+"                    </div>\n"
+"                    <div style=\"width: 375px; margin: 0px; padding: 5px "
+"14px; line-height: 16px; background-color: #F2F2F2;\">\n"
+"                        <span style=\"color: #222; margin-bottom: 5px; "
+"display: block; \">\n"
+"                        % if object.company_id.street:\n"
+"                            ${object.company_id.street}<br/>\n"
+"                        % endif\n"
+"                        % if object.company_id.street2:\n"
+"                            ${object.company_id.street2}<br/>\n"
+"                        % endif\n"
+"                        % if object.company_id.city or object.company_id."
+"zip:\n"
+"                            ${object.company_id.zip or ''} ${object."
+"company_id.city or ''}<br/>\n"
+"                        % endif\n"
+"                        % if object.company_id.country_id:\n"
+"                            ${object.company_id.state_id and ('%s, ' % "
+"object.company_id.state_id.name) or ''} ${object.company_id.country_id.name "
+"or ''}<br/>\n"
+"                        % endif\n"
+"                        </span>\n"
+"                        % if object.company_id.phone:\n"
+"                            <div style=\"margin-top: 0px; margin-right: 0px; "
+"margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; "
+"padding-bottom: 0px; padding-left: 0px; \">\n"
+"                                Phone:&nbsp; ${object.company_id.phone}\n"
+"                            </div>\n"
+"                        % endif\n"
+"                        % if object.company_id.website:\n"
+"                            <div>\n"
+"                                Web :&nbsp;<a href=\"${object.company_id."
+"website}\">${object.company_id.website}</a>\n"
+"                            </div>\n"
+"                        %endif\n"
+"                        <p></p>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"\n"
+"                <div style=“font-family: ‘Arial’, Verdana, Lucica Grande, "
+"Ubuntu, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-"
+"color: #FFF; “>\n"
+"                    <p>Hola ${object.partner_id.name},</p>\n"
+"                    <p>Un nuevo DTE esta disponible: </p>\n"
+"                    <p style=“border-left: 1px solid #8e0000; margin-left: "
+"30px;”>\n"
+"                       &nbsp;&nbsp;<strong>REFERENCIAS</strong><br />\n"
+"                       &nbsp;&nbsp;Folio: <strong>${object.display_name}</"
+"strong><br />\n"
+"                       &nbsp;&nbsp;Total: <strong>${object.currency_id.name} "
+"${str(object.amount_total)[:-2]}</strong><br />\n"
+"                       &nbsp;&nbsp;Fecha: ${object.date_invoice}<br />\n"
+"                       % if object.origin:\n"
+"                       &nbsp;&nbsp;Referencia orden: ${object.origin}<br />\n"
+"                       % endif\n"
+"                       % if object.user_id:\n"
+"                       &nbsp;&nbsp;Su contacto: <a href=“mailto:${object."
+"user_id.email or ‘’}?subject=Invoice%20${object.number}”>${object.user_id."
+"name}</a>\n"
+"                       % endif\n"
+"                    </p>\n"
+"                    % if object.paypal_url:\n"
+"                    <br/>\n"
+"                    <p>It is also possible to directly pay with Paypal:</p>\n"
+"                        <a style=“margin-left: 120px;” href=“${object."
+"paypal_url}”>\n"
+"                            <img class=“oe_edi_paypal_button” src=“/account/"
+"static/src/img/btn_paynowcc_lg.gif”/>\n"
+"                        </a>\n"
+"                    % endif\n"
+"                    <br/>\n"
+"                    <p>Si tiene cualquier pregunta no dude en contactarnos.</"
+"p>\n"
+"                    <p>Gracias:  ${object.company_id.name or ‘’}!</p>\n"
+"                    <br/>\n"
+"                    <br/>\n"
+"                    <div style=“width: 375px; margin: 0px; padding: 0px; "
+"background-color: #8E0000; border-top-left-radius: 5px 5px; border-top-right-"
+"radius: 5px 5px; background-repeat: repeat no-repeat;color: #fff”>\n"
+"                        <h3 style=“margin: 0px; padding: 2px 14px; font-"
+"size: 12px;”>\n"
+"                            <strong style=“text-transform:uppercase; color:"
+"#ccc”>${object.company_id.name}</strong></h3>\n"
+"                    </div>\n"
+"                    <div style=“width: 375px; margin: 0px; padding: 5px "
+"14px; line-height: 16px; background-color: #F2F2F2;”>\n"
+"                        <span style=“color: #222; margin-bottom: 5px; "
+"display: block; “>\n"
+"                        % if object.company_id.street:\n"
+"                            ${object.company_id.street}<br/>\n"
+"                        % endif\n"
+"                        % if object.company_id.street2:\n"
+"                            ${object.company_id.street2}<br/>\n"
+"                        % endif\n"
+"                        % if object.company_id.city or object.company_id."
+"zip:\n"
+"                            ${object.company_id.zip or ‘’} ${object."
+"company_id.city or ‘’}<br/>\n"
+"                        % endif\n"
+"                        % if object.company_id.country_id:\n"
+"                            ${object.company_id.state_id and (‘%s, ‘ % "
+"object.company_id.state_id.name) or ‘’} ${object.company_id.country_id.name "
+"or ‘’}<br/>\n"
+"                        % endif\n"
+"                        </span>\n"
+"                        % if object.company_id.phone:\n"
+"                            <div style=“margin-top: 0px; margin-right: 0px; "
+"margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; "
+"padding-bottom: 0px; padding-left: 0px; “>\n"
+"                                Fono:&nbsp; ${object.company_id.phone}\n"
+"                            </div>\n"
+"                        % endif\n"
+"                        % if object.company_id.website:\n"
+"                            <div>\n"
+"                                Web :&nbsp;<a href=“${object.company_id."
+"website}”>${object.company_id.website}</a>\n"
+"                            </div>\n"
+"                        %endif\n"
+"                        <p></p>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+
+#. module: l10n_cl_dte
+#: selection:account.invoice,claim:0
+msgid " Otorga  Recibo  de  Mercaderías  o Servicios"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_external_layout
+msgid ""
+"\"El acuse de recibo que se declara en este acto, de acuerdo a lo dispuesto "
+"en la letra b) del Artículo 4°, y la letra c) del Artículo 5° de la Ley "
+"19.983, acredita que la entrega de mercaderías o servicio(s) prestado(s) "
+"ha(n) sido recibido(s)\""
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:mail.template,subject:l10n_cl_dte.email_template_edi_invoice
+msgid ""
+"${(object.company_id.partner_id.ref|safe or object.company_id.partner_id."
+"name|safe)} DTE (Ref ${(object.display_name or 'n/a')})"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.PosTicket_dte
+msgid "% discount"
+msgstr "% de descuento"
+
+#. module: l10n_cl_dte
+#: selection:account.payment.term,dte_sii_code:0
+msgid "1: Contado"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: selection:account.payment.term,dte_sii_code:0
+msgid "2: Credito"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: selection:account.payment.term,dte_sii_code:0
+msgid "3: Otro"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.report_ticket
+msgid ""
+"<br/>\n"
+"                      Cajero:"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.report_ticket
+msgid ""
+"<br/>\n"
+"                      Dirección:"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.report_ticket
+msgid ""
+"<br/>\n"
+"                      Fecha:"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.report_ticket
+msgid ""
+"<br/>\n"
+"                      Número de identificación:"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.report_ticket
+msgid ""
+"<br/>\n"
+"                      Rut:"
+msgstr ""
+"<br/>\n"
+"                      RUT:"
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.PosTicket_dte
+msgid ""
+"<br/>\n"
+"              Phone:"
+msgstr ""
+"<br/>\n"
+"              Teléfono:"
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.PosTicket_dte
+msgid ""
+"<br/>\n"
+"              Shop:"
+msgstr ""
+"<br/>\n"
+"              Tienda:"
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.PosTicket_dte
+msgid ""
+"<br/>\n"
+"              User:"
+msgstr ""
+"<br/>\n"
+"              Usuario"
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_external_layout
+msgid "<span style=\"font-size:8px;\"> Documento de Referencia</span>"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_external_layout
+msgid "<strong>Ciudad:</strong>"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_external_layout
+msgid "<strong>Comment:</strong>"
+msgstr "<strong>Comentario:</strong>"
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_external_layout
+msgid "<strong>Comuna:</strong>"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_external_layout
+msgid "<strong>Condición de Pago:</strong>"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_external_layout
+msgid "<strong>Contacto:</strong>"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_external_layout
+msgid "<strong>Descuento</strong>"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_external_layout
+msgid "<strong>Domicilio:</strong>"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_external_layout
+msgid "<strong>FECHA:</strong>"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_external_layout
+msgid "<strong>FIRMA:</strong>"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_external_layout
+msgid "<strong>Fecha del documento</strong>"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_external_layout
+msgid "<strong>Fecha:</strong>"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_external_layout
+msgid "<strong>Folio:</strong>"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_external_layout
+msgid "<strong>Giro:</strong>"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.report_ticket
+msgid "<strong>MONTO TOTAL</strong>"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_external_layout
+msgid "<strong>Motivo/observación:</strong>"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_external_layout
+msgid "<strong>Nombre:</strong>"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_external_layout
+msgid "<strong>R.U.T.:</strong>"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_external_layout
+msgid "<strong>RECINTO:</strong>"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_external_layout
+msgid "<strong>RUT:</strong>"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_external_layout
+msgid "<strong>Referencia:</strong>"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_external_layout
+msgid "<strong>Señor (es):</strong>"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_external_layout
+msgid "<strong>Subtotal</strong>"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_external_layout
+msgid "<strong>Total</strong>"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_external_layout
+msgid "<strong>Vencimiento:</strong>"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_masive_process_wizard_action
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_upload_xml_wizard_action
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_validate_wizard_action
+msgid "Acción"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: selection:account.invoice,claim:0
+msgid "Acepta Contenido del Documento"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: selection:account.invoice,sii_result:0
+#: selection:mail.message.dte.document,state:0 selection:sii.xml.envio,state:0
+msgid "Aceptado"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_document_view_form
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_document_view_tree
+#: selection:sii.dte.upload_xml.wizard,option:0
+#: selection:dte.validate.wizard,option:0
+msgid "Aceptar"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: selection:mail.message.dte,origin_type:0
+msgid "Acknowledge Incoming from Customer"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_send_queue_active
+msgid "Active"
+msgstr "Activo"
+
+#. module: l10n_cl_dte
+#: model:mail.template,subject:l10n_cl_dte.email_template_receipt_ack
+msgid "Acuse de Recibo - ${object.name}"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_account_invoice_line_price_tax_included
+msgid "Amount"
+msgstr "Monto"
+
+#. module: l10n_cl_dte
+#: selection:account.invoice,sii_result:0
+msgid "Anulado"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_account_invoice_gdr_aplicacion
+msgid "Aplicación del Desc/Rec"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: selection:dte.validate.wizard,action:0
+msgid "Aprobar comercialmente"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_external_layout
+msgid "Artículo"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.view_supplier_invoice_form
+msgid "Ask Refund"
+msgstr "Solicitar Reembolso"
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.view_invoice_form
+msgid "Ask for DTE"
+msgstr "Descargar DTE"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_send_queue_send_email
+msgid "Auto Enviar Email"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_send_queue_date_time
+msgid "Auto Envío al SII"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_account_invoice_sii_batch_number
+msgid "Batch Number"
+msgstr "Nro de Procesamiento"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,help:l10n_cl_dte.field_account_invoice_sii_batch_number
+msgid "Batch number for processing multiple invoices together"
+msgstr "Número de lote para procesar múltiples DTEs juntos."
+
+#. module: l10n_cl_dte
+#: selection:account.invoice,sii_result:0 selection:sii.xml.envio,state:0
+msgid "Borrador"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_external_layout
+msgid "CEDIBLE"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:product.template,name:l10n_cl_dte.cn_correct
+msgid "CORRIGE-NC2"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.report_ticket
+msgid "Caja N°:"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.sii_dte_masive_send_wizard_form
+#: model:ir.ui.view,arch_db:l10n_cl_dte.sii_dte_validate_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_account_invoice_canceled
+msgid "Canceled?"
+msgstr "Anulado?"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_document_line_quantity
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_external_layout
+#: model:ir.ui.view,arch_db:l10n_cl_dte.report_ticket
+msgid "Cantidad"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,help:l10n_cl_dte.field_res_company_dte_cedibles
+msgid ""
+"Cantidad de copias cedibles. Para que esta característica funcione, deberá "
+"habilitar la iimpresión de cedible en LibreDTE."
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,help:l10n_cl_dte.field_res_company_dte_tributarias
+msgid "Cantidad de copias tributarias."
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.PosTicket_dte
+msgid "Change:"
+msgstr "Cambio:"
+
+#. module: l10n_cl_dte
+#: model:ir.model,name:l10n_cl_dte.model_res_city
+msgid "City"
+msgstr "Ciudad"
+
+#. module: l10n_cl_dte
+#: model:ir.actions.act_window,help:l10n_cl_dte.action_invoice_tree1
+msgid "Click to create a customer invoice."
+msgstr "Haga clic para crear factura a cliente."
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.report_ticket
+msgid "Cliente:"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.menu,name:l10n_cl_dte.menu_action_sii_send_queue
+msgid "Cola de envío"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: selection:mail.message.dte,origin_type:0
+msgid "Commercial Accept Incoming from Customer"
+msgstr "Aceptación comercial entrante de Cliente"
+
+#. module: l10n_cl_dte
+#: model:ir.model,name:l10n_cl_dte.model_res_company
+msgid "Company registered turns"
+msgstr "Actividades registradas de la compañía"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_xml_envio_company_id
+msgid "Compañia"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_company_id
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_document_company_id
+msgid "Compañía"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: code:addons/l10n_cl_dte/models/invoice.py:1054
+#, python-format
+msgid "Compose Email"
+msgstr "Redactar Email"
+
+#. module: l10n_cl_dte
+#: selection:account.invoice,no_rec_code:0
+msgid "Compras destinadas a IVA a generar operaciones no gravados o exentas."
+msgstr "Compras destinadas a IVA a generar operaciones no gravados o exentas."
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.view_sii_regional_offices_form
+msgid "Comunas"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.sii_dte_masive_send_wizard_form
+#: model:ir.ui.view,arch_db:l10n_cl_dte.sii_dte_validate_form
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: l10n_cl_dte
+#: selection:sii.send_queue,tipo_trabajo:0
+msgid "Consulta"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.view_invoice_form
+msgid "Consultar estado de Reclamo"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_account_invoice_contact_id
+msgid "Contacto"
+msgstr "Contacto"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_res_company_dte_cedibles
+msgid "Copias Cedibles"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_res_company_dte_tributarias
+msgid "Copias Tributarias"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_regional_offices_state_ids
+msgid "Counties"
+msgstr "Comunas"
+
+#. module: l10n_cl_dte
+#: selection:sii.dte.masive.process.wizard,action:0
+msgid "Crear"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: selection:sii.dte.masive.process.wizard,action:0
+msgid "Crear Aceptar Todos"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: selection:sii.dte.upload_xml.wizard,action:0
+msgid "Crear Orden de Pedido y Factura"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: selection:sii.dte.masive.process.wizard,action:0
+msgid "Crear Rechazar Todos"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: selection:sii.dte.upload_xml.wizard,action:0
+msgid "Crear Solamente Factura"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_account_invoice_gdr_create_uid
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_create_uid
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_document_create_uid
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_document_line_create_uid
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_send_queue_create_uid
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_masive_accept_wizard_create_uid
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_masive_process_wizard_create_uid
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_masive_send_wizard_create_uid
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_upload_xml_wizard_create_uid
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_validate_wizard_create_uid
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_regional_offices_create_uid
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_xml_envio_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_account_invoice_gdr_create_date
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_create_date
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_document_create_date
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_document_line_create_date
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_send_queue_create_date
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_masive_accept_wizard_create_date
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_masive_process_wizard_create_date
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_masive_send_wizard_create_date
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_upload_xml_wizard_create_date
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_validate_wizard_create_date
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_regional_offices_create_date
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_xml_envio_create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: l10n_cl_dte
+#: model:ir.actions.server,name:l10n_cl_dte.ir_cron_sii_request_ir_actions_server
+#: model:ir.cron,cron_name:l10n_cl_dte.ir_cron_sii_request
+#: model:ir.cron,name:l10n_cl_dte.ir_cron_sii_request
+msgid "Cron de envío y consulta estado documento en el SII"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.view_invoice_form
+msgid "Cross Reference Documents"
+msgstr "Referencias Cruzadas de Documentos"
+
+#. module: l10n_cl_dte
+#: model:ir.model,name:l10n_cl_dte.model_res_currency
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_document_dte_id
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_upload_xml_wizard_dte_id
+msgid "DTE"
+msgstr "DTE"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_res_company_dte_email
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_res_partner_dte_email
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_res_users_dte_email
+msgid "DTE Email"
+msgstr "Email DTE"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_res_company_dte_password
+msgid "DTE Password/Token"
+msgstr "Contraseña / Token DTE"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_res_company_dte_service_provider
+msgid "DTE Service Provider"
+msgstr "Proveedor de servicio DTE"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_account_payment_term_dte_sii_code
+msgid "DTE Sii Code"
+msgstr "Código DTE"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_res_company_dte_username
+msgid "DTE Username"
+msgstr "Usuario DTE"
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.sii_dte_masive_send_wizard_form
+msgid "DTes a enviar"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_external_layout
+msgid "Desc.(%)"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_document_line_description
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_external_layout
+#: model:ir.ui.view,arch_db:l10n_cl_dte.report_ticket
+msgid "Descripción"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_document_line_product_description
+msgid "Descripción Producto"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: selection:account.invoice.gdr,type:0
+msgid "Descuento"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_account_invoice_gdr_amount_untaxed_global_dr
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_account_invoice_gdr_valor
+msgid "Descuento/Recargo Global"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.view_invoice_form
+msgid "Descuentos / Recargos Globales"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_account_invoice_global_descuentos_recargos
+msgid "Descuentos / Recargos globales"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.view_supplier_invoice_form
+msgid "Descuetos / Recargos Globales"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_account_invoice_claim_description
+msgid "Detalle Reclamo"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.PosTicket_dte
+msgid "Discount:"
+msgstr "Descuento:"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_account_invoice_gdr_display_name
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_display_name
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_document_display_name
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_document_line_display_name
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_send_queue_display_name
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_masive_accept_wizard_display_name
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_masive_process_wizard_display_name
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_masive_send_wizard_display_name
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_upload_xml_wizard_display_name
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_validate_wizard_display_name
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_regional_offices_display_name
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_xml_envio_display_name
+msgid "Display Name"
+msgstr "Nombre Mostrado"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_account_invoice_sii_document_number
+msgid "Document Number"
+msgstr "Folio Documento"
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.view_account_invoice_filter
+msgid "Document Type"
+msgstr "Tipo Documento"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_document_line_document_id
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_upload_xml_wizard_document_id
+msgid "Documento"
+msgstr "Documento"
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_document_view_tree
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_view_form
+msgid "Documentos"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_document_ids
+msgid "Documents"
+msgstr "Documentos"
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.view_invoice_form
+msgid "Download XML DTE"
+msgstr "Descargar DTE"
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.view_invoice_form
+msgid "Download XML Exchange"
+msgstr "Descargar DTE Intercambio"
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_view_tree
+msgid "Dtes"
+msgstr "DTEs"
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_external_layout
+msgid "E-Mail:"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.report_ticket
+msgid "Efectivo"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.view_invoice_form
+#: model:ir.ui.view,arch_db:l10n_cl_dte.view_supplier_invoice_form
+msgid "Electronic Invoice"
+msgstr "Factura Electrónica"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_mail_id
+msgid "Email"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: selection:account.invoice,sii_result:0
+msgid "En cola de envío"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: selection:account.invoice,no_rec_code:0
+msgid "Entregas gratuitas (premios, bonificaciones, etc.) recibidos."
+msgstr "Entregas gratuitas (premios, bonificaciones, etc.) recibidos."
+
+#. module: l10n_cl_dte
+#: selection:account.invoice,sii_result:0 selection:sii.xml.envio,state:0
+msgid "Enviado"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.actions.act_window,name:l10n_cl_dte.action_account_invoice_send
+msgid "Enviar Documentos al SII"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: selection:sii.send_queue,tipo_trabajo:0
+msgid "Envío"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: code:addons/l10n_cl_dte/models/sii_xml_envio.py:263
+#, python-format
+msgid "Error RCT"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: code:addons/l10n_cl_dte/models/invoice.py:1800
+#, python-format
+msgid "Error code: 2"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: code:addons/l10n_cl_dte/models/sii_xml_envio.py:253
+#: code:addons/l10n_cl_dte/models/sii_xml_envio.py:255
+#, python-format
+msgid "Estado -11"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: code:addons/l10n_cl_dte/models/sii_xml_envio.py:253
+#, python-format
+msgid "Estado -11: Espere a que sea aceptado por el SII, intente en 5s más"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: code:addons/l10n_cl_dte/models/sii_xml_envio.py:255
+#, python-format
+msgid "Estado -11: error 1Algo a salido mal, revisar carátula"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_account_invoice_dte_reception_status
+msgid "Estado de Recepcion del Envio"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:product.template,description:l10n_cl_dte.cn_correct
+msgid ""
+"Este producto no debe ser eliminado.\n"
+"            Se utiliza para corregir texto en las Notas de Cŕedito"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.report_ticket
+msgid "FORMAS DE PAGO"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_account_invoice_gdr_invoice_id
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_document_invoice_id
+msgid "Factura"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_validate_wizard_invoice_ids
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_xml_envio_invoice_ids
+msgid "Facturas"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: selection:account.invoice,no_rec_code:0
+msgid "Facturas de proveedores registrados fuera de plazo."
+msgstr "Facturas de proveedores registrados fuera de plazo."
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_external_layout
+msgid "Fax:"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_document_date
+msgid "Fecha Emisión"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_upload_xml_wizard_filename
+msgid "File Name"
+msgstr "Nombre de Archivo"
+
+#. module: l10n_cl_dte
+#: code:addons/l10n_cl_dte/models/invoice.py:1450
+#, python-format
+msgid "Fill Partner VAT"
+msgstr "Complete el RUT del cliente"
+
+#. module: l10n_cl_dte
+#: selection:account.invoice.gdr,aplicacion:0
+msgid "Flete"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_document_number
+msgid "Folio"
+msgstr "Folio"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_account_invoice_ticket
+msgid "Formato Ticket"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: selection:account.invoice,no_rec_code:0
+msgid "Gastos rechazados."
+msgstr "Gastos rechazados."
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.gdr_view_form
+msgid "Global Descuentos Recargos"
+msgstr "Descuentos/Recargos Globales"
+
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_account_invoice_amount_untaxed_global_recargo
+msgid "Global Recargo Amount"
+msgstr "Monto recargo global"
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.view_account_invoice_filter
+msgid "Glosa descriptiva"
+msgstr "Glosa descriptiva"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_account_invoice_gdr_id
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_document_id
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_document_line_id
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_id
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_send_queue_id
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_masive_accept_wizard_id
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_masive_process_wizard_id
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_masive_send_wizard_id
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_upload_xml_wizard_id
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_validate_wizard_id
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_regional_offices_id
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_xml_envio_id
+msgid "ID"
+msgstr "ID"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_reception_response_number
+msgid "ID Resp. Automática"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_send_queue_doc_ids
+msgid "Id Documentos"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.view_invoice_form
+msgid "Imprimir Cedible"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:product.template,name:l10n_cl_dte.product_imp
+msgid "Impuestos Varios2"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,help:l10n_cl_dte.field_res_company_dte_password
+msgid ""
+"In LibreDTE case, this value is the token. In other cases, the pair username/"
+"password is needed."
+msgstr ""
+"En el caso de LibreDTE este valor es el token. En otros casos se requiere el "
+"par usuario/contraseña."
+
+#. module: l10n_cl_dte
+#: selection:mail.message.dte,origin_type:0
+msgid "Incoming Doc From Supplier"
+msgstr "Documento entrante del proveedor"
+
+#. module: l10n_cl_dte
+#: selection:mail.message.dte,origin_type:0
+msgid "Incoming SII Accept State"
+msgstr "Estado de aceptación SII"
+
+#. module: l10n_cl_dte
+#: selection:mail.message.dte,origin_type:0
+msgid "Incoming SII Reject State"
+msgstr "Estado de Rechazo SII"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_account_invoice_estado_recep_glosa
+msgid "Información Adicional del Estado de Recepción"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: code:addons/l10n_cl_dte/models/invoice.py:486
+#: model:ir.model,name:l10n_cl_dte.model_account_invoice
+#, python-format
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: l10n_cl_dte
+#: model:ir.model,name:l10n_cl_dte.model_account_invoice_line
+msgid "Invoice Line"
+msgstr "Línea de doc."
+
+#. module: l10n_cl_dte
+#: model:ir.model,name:l10n_cl_dte.model_account_invoice_tax
+msgid "Invoice Tax"
+msgstr "Impuesto"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_account_invoice_gdr___last_update
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte___last_update
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_document___last_update
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_document_line___last_update
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_send_queue___last_update
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_masive_accept_wizard___last_update
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_masive_process_wizard___last_update
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_masive_send_wizard___last_update
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_upload_xml_wizard___last_update
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_validate_wizard___last_update
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_regional_offices___last_update
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_xml_envio___last_update
+msgid "Last Modified on"
+msgstr "Ultima modificación "
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_account_invoice_gdr_write_uid
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_document_line_write_uid
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_document_write_uid
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_write_uid
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_send_queue_write_uid
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_masive_accept_wizard_write_uid
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_masive_process_wizard_write_uid
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_masive_send_wizard_write_uid
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_upload_xml_wizard_write_uid
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_validate_wizard_write_uid
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_regional_offices_write_uid
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_xml_envio_write_uid
+msgid "Last Updated by"
+msgstr "Ultima modificación por"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_account_invoice_gdr_write_date
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_document_line_write_date
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_document_write_date
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_write_date
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_send_queue_write_date
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_masive_accept_wizard_write_date
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_masive_process_wizard_write_date
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_masive_send_wizard_write_date
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_upload_xml_wizard_write_date
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_validate_wizard_write_date
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_regional_offices_write_date
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_xml_envio_write_date
+msgid "Last Updated on"
+msgstr "Ultima actualización el"
+
+#. module: l10n_cl_dte
+#: selection:res.company,dte_service_provider:0
+msgid "LibreDTE"
+msgstr "LibreDTE"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_document_invoice_line_ids
+msgid "Líneas del Documento"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_document_view_form
+msgid "Líneas del documento"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.report_ticket
+msgid "MONTO EXENTO"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_document_lines_view_form
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_document_view_form
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_view_form
+msgid "Mail DTE Process"
+msgstr "Procesar Email de DTE"
+
+#. module: l10n_cl_dte
+#: selection:mail.message.dte,origin_type:0
+msgid "Merchandise Receive Incoming from Customer"
+msgstr "Acuso de recibo de mercaderías desde el cliente"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_send_queue_model
+msgid "Model destino"
+msgstr "Modelo de destino"
+
+#. module: l10n_cl_dte
+#: model:product.template,name:l10n_cl_dte.no_product
+msgid "Modifica Documento2"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_document_currency_id
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_document_line_currency_id
+msgid "Moneda"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: selection:account.invoice.gdr,gdr_type:0
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_document_amount
+#: model:ir.ui.view,arch_db:l10n_cl_dte.report_ticket
+msgid "Monto"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_masive_send_wizard_documentos
+msgid "Movimientos"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_account_invoice_next_invoice_number
+msgid "Next Document Number"
+msgstr "Próximo folio"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,help:l10n_cl_dte.field_account_invoice_next_invoice_number
+msgid ""
+"Next number that will be used. This number can be incremented frequently so "
+"the displayed value might already be obsolete"
+msgstr ""
+"Próximo folio que será usado. Este número puede ser incrementado "
+"frecuentemente, por lo que el valor mostrado puede ya ser obsoleto."
+
+#. module: l10n_cl_dte
+#: selection:account.invoice,sii_result:0 selection:sii.xml.envio,state:0
+msgid "No Enviado"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: code:addons/l10n_cl_dte/wizard/sii_ws_consult_wizard.py:24
+#, python-format
+msgid "No Journal Document Class as active_id on context"
+msgstr "No hay un tipo de documento activo en el contexto"
+
+#. module: l10n_cl_dte
+#: code:addons/l10n_cl_dte/wizard/sii_ws_currency_rate_wizard.py:25
+#, python-format
+msgid "No Point Of sale as active_id on context"
+msgstr "No hay punto de venta activo en el contexto"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_name
+msgid "Nombre Envío"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_xml_envio_name
+msgid "Nombre de envío"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_account_invoice_no_rec_code
+msgid "Non recoverable code"
+msgstr "Código no recuperable"
+
+#. module: l10n_cl_dte
+#: selection:res.company,dte_service_provider:0
+msgid "None"
+msgstr "None"
+
+#. module: l10n_cl_dte
+#: code:addons/l10n_cl_dte/models/sii_xml_envio.py:203
+#, python-format
+msgid "Not Service provider selected!"
+msgstr "No se ha seleccionado proveedor del servicio de DTE"
+
+#. module: l10n_cl_dte
+#: selection:mail.message.dte,origin_type:0
+msgid "Not clasified"
+msgstr "No clasificado"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_document_line_new_product
+msgid "Nuevo Producto"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_send_queue_n_atencion
+msgid "Número atención"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_masive_send_wizard_numero_atencion
+msgid "Número de atención"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.actions.act_window,help:l10n_cl_dte.action_invoice_tree1
+msgid ""
+"Odoo's electronic invoicing allows to ease and fasten the\n"
+"                    collection of customer payments. Your customer receives "
+"the\n"
+"                    invoice by email and he can pay online and/or import it\n"
+"                    in his own system."
+msgstr ""
+"La facturación electrónica de Odoo permite facilitar y acelerar la\n"
+"                    recolección de pagos del cliente. Su cliente recibe la\n"
+"                    factura por email y puede pagarla online y/o importarla\n"
+"                    a su propio sistema."
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_upload_xml_wizard_option
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_validate_wizard_option
+msgid "Opción"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: code:addons/l10n_cl_dte/models/invoice.py:690
+#, python-format
+msgid "Operation Type Error"
+msgstr "Error de tipo de operación"
+
+#. module: l10n_cl_dte
+#: code:addons/l10n_cl_dte/models/invoice.py:690
+#, python-format
+msgid "Operation Type Must be \"Sale\" or \"Purchase\""
+msgstr "El tipo de operación debe ser “venta” o “compra”"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_account_invoice_purchase_to_done
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_document_purchase_to_done
+msgid "Ordenes de Compra a validar"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_origin_type
+msgid "Origin / Type of message"
+msgstr "Orígen / tipo de mensaje"
+
+#. module: l10n_cl_dte
+#: selection:account.invoice,no_rec_code:0
+msgid "Otros."
+msgstr "Otros"
+
+#. module: l10n_cl_dte
+#: selection:mail.message.dte,origin_type:0
+msgid "Outgoing Acknowledge"
+msgstr "Acuse de recibo saliente"
+
+#. module: l10n_cl_dte
+#: selection:mail.message.dte,origin_type:0
+msgid "Outgoing Commercial Accept"
+msgstr "Aceptación comercial saliente"
+
+#. module: l10n_cl_dte
+#: selection:mail.message.dte,origin_type:0
+msgid "Outgoing Merchandise Receive"
+msgstr "Acuse de recibo de mercadería saliente"
+
+#. module: l10n_cl_dte
+#: selection:mail.message.dte,origin_type:0
+msgid "Outgoing Reject"
+msgstr "Rechazo Saliente"
+
+#. module: l10n_cl_dte
+#: selection:mail.message.dte,origin_type:0
+msgid "Outgoing to Customer"
+msgstr "Saliente al Cliente"
+
+#. module: l10n_cl_dte
+#: model:ir.model,name:l10n_cl_dte.model_res_partner
+msgid "Partner registered turns"
+msgstr "Actividades econ. registradas del cliente/proveedor"
+
+#. module: l10n_cl_dte
+#: model:ir.model,name:l10n_cl_dte.model_account_payment_term
+msgid "Payment Terms"
+msgstr "Plazos de pago"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,help:l10n_cl_dte.field_res_company_dte_username
+msgid "Please enter the value issued by the DTE Service provider"
+msgstr "Por favor ingrese el valor enviado por el proveedor de servicios DTE"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,help:l10n_cl_dte.field_res_company_dte_service_provider
+msgid ""
+"Please select your company service provider for DTE service. Select 'None' "
+"if you use manual invoices, fiscal controllers or MiPYME Sii Service. Also "
+"take in account that if you select 'www.sii.cl' you will need to provide SII "
+"exempt resolution number in order to be legally enabled to use the service. "
+"If your service provider is not listed here, please send us an email to "
+"soporte@blancomartin.cl in order to add the option."
+msgstr ""
+"Por favor seleccione el proveedor de servicios DTE para su compañía. "
+"Seleccione ‘Ninguno’ p MyPime si usa facturas manuales o electrónicas desde "
+"el sistema de facturación MiPYME (Servicio provisto por SII). También tome "
+"en cuenta que si selecciona ‘www.sii.cl’ necesitará proveer el número de "
+"resolución exenta que le provee el SII y la fecha de resolución para estar "
+"legalmente habilitado a usar este servicio. Si su proveedor de servicio no "
+"está listado, por favor envíenos un email a soporte@bmya.cl para evaluar el "
+"agregado de la opción."
+
+#. module: l10n_cl_dte
+#: selection:account.invoice.gdr,gdr_type:0
+msgid "Porcentaje"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_upload_xml_wizard_pre_process
+msgid "Pre Process"
+msgstr "Preproceso"
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_external_layout
+msgid "Precio"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_document_line_price_unit
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_external_layout
+#: model:ir.ui.view,arch_db:l10n_cl_dte.report_ticket
+msgid "Precio Unitario"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: selection:account.invoice,sii_result:0
+msgid "Procesado"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_view_form
+msgid "Procesar Envío"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_document_line_product_id
+msgid "Producto"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_document_partner_id
+msgid "Proveedor"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_document_new_partner
+msgid "Proveedor Nuevo"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_external_layout
+msgid "R.U.T.:"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_account_invoice_gdr_gdr_dtail
+msgid "Razón del descuento"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: selection:account.invoice.gdr,type:0
+msgid "Recargo"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.actions.act_window,name:l10n_cl_dte.action_dte_process
+#: model:ir.ui.menu,name:l10n_cl_dte.menu_action_recept_xml
+#: model:ir.ui.menu,name:l10n_cl_dte.menu_recept_xml
+msgid "Recepcionar XML de Envío"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: selection:account.invoice,sii_result:0
+#: selection:mail.message.dte.document,state:0 selection:sii.xml.envio,state:0
+msgid "Rechazado"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_document_view_form
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_document_view_tree
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_view_form
+#: selection:sii.dte.upload_xml.wizard,option:0
+#: selection:dte.validate.wizard,option:0
+msgid "Rechazar"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: selection:mail.message.dte.document,state:0
+msgid "Recibido"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: selection:account.invoice,dte_reception_status:0
+msgid "Recibido en DTE"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: selection:account.invoice,dte_reception_status:0
+msgid "Recibido mercaderias"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: selection:dte.validate.wizard,action:0
+msgid "Recibo de mercaderías"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_account_invoice_claim
+msgid "Reclamo"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: selection:account.invoice,claim:0
+msgid "Reclamo al  Contenido del Documento "
+msgstr ""
+
+#. module: l10n_cl_dte
+#: selection:account.invoice,claim:0
+msgid "Reclamo por Falta Parcial de Mercaderías"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: selection:account.invoice,claim:0
+msgid "Reclamo por Falta Total de Mercaderías"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_account_invoice_reference_ids
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: l10n_cl_dte
+#: code:addons/l10n_cl_dte/models/invoice.py:488
+#, python-format
+msgid "Refund"
+msgstr "Reembolso"
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.view_invoice_form
+msgid "Refund Invoice"
+msgstr "Nota de crédito"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_res_city_sii_regional_office_ids
+msgid "Regional Office"
+msgstr "Oficina Regional"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_regional_offices_name
+msgid "Regional Office Name"
+msgstr "Nombre de oficina regional"
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.view_invoice_form
+#: model:ir.ui.view,arch_db:l10n_cl_dte.view_supplier_invoice_form
+msgid "Registro de Reclamo en SII"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: selection:account.invoice,sii_result:0
+msgid "Reparo"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:mail.template,subject:l10n_cl_dte.email_template_receipt_commercial_accept
+msgid "Respuesta de Aceptación Comercial - ${object.display_name}"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:mail.template,subject:l10n_cl_dte.email_template_receipt_of_goods
+msgid "Respuesta de Recepción de Mercaderías - ${object.display_name}"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:mail.template,subject:l10n_cl_dte.email_template_commercial_reject
+msgid "Respuesta de Rechazo Comercial - ${object.name}"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_account_invoice_sii_result
+msgid "Resultado"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_external_layout
+msgid "SII -"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: selection:res.company,dte_service_provider:0
+msgid "SII - Certification process"
+msgstr "Proceso certif. SII"
+
+#. module: l10n_cl_dte
+#: selection:res.company,dte_service_provider:0
+msgid "SII - Portal MiPyme"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: code:addons/l10n_cl_dte/models/invoice.py:232
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_account_invoice_sii_barcode
+#, python-format
+msgid "SII Barcode"
+msgstr "Código de barras SII"
+
+#. module: l10n_cl_dte
+#: code:addons/l10n_cl_dte/models/invoice.py:237
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_account_invoice_sii_barcode_img
+#, python-format
+msgid "SII Barcode Image"
+msgstr "Imágen de código de barras"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,help:l10n_cl_dte.field_account_invoice_sii_barcode_img
+msgid "SII Barcode Image in PDF417 format"
+msgstr "Código de barras en formato PDF417"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,help:l10n_cl_dte.field_account_invoice_sii_barcode
+msgid "SII Barcode Name"
+msgstr "Código de barras SII"
+
+#. module: l10n_cl_dte
+#: model:ir.actions.act_window,name:l10n_cl_dte.cola_envio
+#: model:ir.ui.view,arch_db:l10n_cl_dte.view_sii_send_queue_form
+#: model:ir.ui.view,arch_db:l10n_cl_dte.view_sii_send_queue_tree
+msgid "SII Cola de envío"
+msgstr "Cola de envío SII"
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.sii_dte_validate_form
+msgid "SII DTE Upload XML Wizard"
+msgstr "Asistente de subida de XML DTE"
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.sii_dte_masive_send_wizard_form
+msgid "SII DTE masive send Wizard"
+msgstr "Asistente de envío de DTE masivo"
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.view_sii_regional_offices_tree
+msgid "SII Document Class"
+msgstr "Clase de documento"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_res_company_dte_resolution_date
+msgid "SII Exempt Resolution Date"
+msgstr "Fecha de resolución SII"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_res_company_dte_resolution_number
+msgid "SII Exempt Resolution Number"
+msgstr "Nro de resolución SII"
+
+#. module: l10n_cl_dte
+#: model:ir.model,name:l10n_cl_dte.model_sii_dte_masive_accept_wizard
+msgid "SII Masive DTE Accept Wizard"
+msgstr "Asistente de Aceptación masiva de DTEs"
+
+#. module: l10n_cl_dte
+#: model:ir.model,name:l10n_cl_dte.model_sii_dte_masive_process_wizard
+msgid "SII Masive DTE Process Wizard"
+msgstr "Asistente de Proceso masivo de DTEs"
+
+#. module: l10n_cl_dte
+#: model:ir.model,name:l10n_cl_dte.model_sii_dte_masive_send_wizard
+msgid "SII Masive send Wizard"
+msgstr "Asistente de Envío masivo "
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_xml_envio_sii_receipt
+msgid "SII Mensaje de recepción"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_account_invoice_sii_message
+msgid "SII Message"
+msgstr "Mensaje SII"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_res_company_sii_regional_office_id
+msgid "SII Regional Office"
+msgstr "Oficina Regional SII"
+
+#. module: l10n_cl_dte
+#: model:ir.actions.act_window,name:l10n_cl_dte.act_sii_regional_offices
+#: model:ir.ui.menu,name:l10n_cl_dte.menu_action_sii_regional_offices
+#: model:ir.ui.view,arch_db:l10n_cl_dte.view_sii_regional_offices_form
+msgid "SII Regional Offices"
+msgstr "Oficinas regionales SII"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_xml_envio_sii_send_ident
+msgid "SII Send Identification"
+msgstr "Identificador de envío SII"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_account_invoice_sii_xml_dte
+msgid "SII XML DTE"
+msgstr "DTE XML"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_account_invoice_sii_xml_request
+msgid "SII XML Request"
+msgstr "Request XML"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_xml_envio_sii_xml_response
+msgid "SII XML Response"
+msgstr "Respuesta XML"
+
+#. module: l10n_cl_dte
+#: model:ir.model,name:l10n_cl_dte.model_sii_dte_validate_wizard
+msgid "SII XML from Provider"
+msgstr "XML del proveedor"
+
+#. module: l10n_cl_dte
+#: model:ir.model,name:l10n_cl_dte.model_sii_dte_upload_xml_wizard
+msgid "SII XML from Supplier"
+msgstr "XML del proveedor"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,help:l10n_cl_dte.field_account_invoice_sii_result
+msgid "SII request result"
+msgstr "Resultado solicitud"
+
+#. module: l10n_cl_dte
+#: code:addons/l10n_cl_dte/models/invoice.py:1800
+#: code:addons/l10n_cl_dte/models/sii_xml_envio.py:263
+#, python-format
+msgid "SII:RESPUESTASII:RESP_HDRGLOSA"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: selection:account.invoice.gdr,aplicacion:0
+msgid "Seguro"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_account_invoice_gdr_type
+msgid "Seleccione Descuento/Recargo Global"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.view_invoice_form
+msgid "Send XML"
+msgstr "Enviar XML"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_res_currency_short_name
+msgid "Short Name"
+msgstr "Nombre corto"
+
+#. module: l10n_cl_dte
+#: selection:sii.dte.upload_xml.wizard,option:0
+msgid "Solo Subir"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_document_state
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_xml_envio_state
+msgid "State"
+msgstr "Estado"
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.view_supplier_invoice_form
+msgid "Subir XML"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.PosTicket_dte
+msgid "Subtotal:"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: code:addons/l10n_cl_dte/models/invoice.py:487
+#, python-format
+msgid "Supplier Invoice"
+msgstr "Factura proveedor"
+
+#. module: l10n_cl_dte
+#: code:addons/l10n_cl_dte/models/invoice.py:489
+#, python-format
+msgid "Supplier Refund"
+msgstr "Reembolso proveedor"
+
+#. module: l10n_cl_dte
+#: model:ir.model,name:l10n_cl_dte.model_account_tax
+msgid "Tax"
+msgstr "Impuesto"
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_external_layout
+msgid "Teléfono:"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: code:addons/l10n_cl_dte/models/invoice.py:614
+#, python-format
+msgid ""
+"The customer/supplier does not have a VAT defined. The type of invoicing "
+"document you selected requires you tu settle a VAT."
+msgstr ""
+"El cliente o proveedor no tiene un RUT definido. El tipo de documento que "
+"seleccionó requiere el RUT."
+
+#. module: l10n_cl_dte
+#: model:ir.actions.act_window,help:l10n_cl_dte.action_invoice_tree1
+msgid ""
+"The discussions with your customer are automatically displayed at\n"
+"                    the bottom of each invoice."
+msgstr ""
+"Las conversaciones con sus clientes son mostradas en el contexto de su "
+"factura."
+
+#. module: l10n_cl_dte
+#: code:addons/l10n_cl_dte/models/invoice.py:1856
+#, python-format
+msgid "The document has not been sent yet. It is in internal queue"
+msgstr ""
+"El documento no ha sido enviado aún. Se encuentra en la cola de envío "
+"interna."
+
+#. module: l10n_cl_dte
+#: code:addons/l10n_cl_dte/wizard/upload_xml.py:871
+#, python-format
+msgid "The document is already registered"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,help:l10n_cl_dte.field_res_company_dte_resolution_number
+msgid ""
+"This value must be provided and must appear in your pdf or printed tribute "
+"document, under the electronic stamp to be legally valid."
+msgstr ""
+"Este valor debe ser provisto y debe aparecer en su pdf o documento "
+"tributario impreso bajo el timbre electrónico, para ser legalmente válido."
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_external_layout
+msgid ""
+"Timbre Electrónico SII\n"
+"                              <br/>\n"
+"                              Resolución 393/2016 Verifique documento: www."
+"sii.cl"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.report_ticket
+msgid ""
+"Timbre Electrónico SII\n"
+"                        <br/>\n"
+"                        Resolución 393/2016 Verifique documento: www.sii.cl"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.PosTicket_dte
+msgid ""
+"Timbre Electrónico SII\n"
+"                      <br/>\n"
+"                      Resolución 393/2016 Verifique documento: www.sii.cl"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_document_document_type_id
+msgid "Tipo de Documento"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_account_invoice_gdr_gdr_type
+msgid "Tipo de descuento"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_send_queue_tipo_trabajo
+msgid "Tipo de trabajo"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.actions.act_window,name:l10n_cl_dte.action_invoice_tree1
+msgid "Todos los documentos de ventas (Para Certificación)"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_document_line_price_subtotal
+#: model:ir.ui.view,arch_db:l10n_cl_dte.report_ticket
+msgid "Total"
+msgstr "Total"
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.PosTicket_dte
+msgid "Total:"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.view_supplier_invoice_form
+msgid "Tratamiento del IVA"
+msgstr "Tratamiento del IVA"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,help:l10n_cl_dte.field_mail_message_dte_origin_type
+msgid "Type of message and its origin"
+msgstr "Tipo de mensaje y su orígen"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,help:l10n_cl_dte.field_sii_dte_upload_xml_wizard_xml_file
+msgid "Upload the XML File in this holder"
+msgstr "Subir el archivo XML en este contenedor."
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_send_queue_user_id
+msgid "User"
+msgstr "Usuario"
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_xml_envio_user_id
+msgid "Usuario"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: selection:account.invoice,dte_reception_status:0
+msgid "Validada Comercial"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.view_supplier_invoice_form
+msgid "Validar DTE"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.actions.act_window,name:l10n_cl_dte.action_masive_validate
+msgid "Validar Documentos"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.PosTicket_dte
+msgid "With a"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.dte_document_view_form
+msgid "XML DTE"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_mail_message_dte_document_xml
+msgid "XML Documento"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_xml_envio_xml_envio
+#: model:ir.ui.view,arch_db:l10n_cl_dte.xml_envio_view_form
+#: model:ir.ui.view,arch_db:l10n_cl_dte.xml_envio_view_tree
+msgid "XML Envío"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model.fields,field_description:l10n_cl_dte.field_sii_dte_upload_xml_wizard_xml_file
+msgid "XML File"
+msgstr "Archivo XML"
+
+#. module: l10n_cl_dte
+#: code:addons/l10n_cl_dte/models/invoice.py:836
+#, python-format
+msgid "XML Malformed Error:  %s"
+msgstr "Error por XML mal formado:  %s"
+
+#. module: l10n_cl_dte
+#: model:ir.actions.act_window,name:l10n_cl_dte.act_xml_recept
+msgid "XML Recepcionados"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.menu,name:l10n_cl_dte.menu_action_xml_recept
+msgid "XML Recibidos"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.view_invoice_form
+msgid "XML de Envío SII"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.view_supplier_invoice_form
+msgid "XML de Validación Comercial"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: code:addons/l10n_cl_dte/models/invoice.py:477
+#, python-format
+msgid ""
+"Your company as a DTE issuer, has old economic activities assigned. Please, "
+"check that your company's economic activities are in accordance with new "
+"codes, effective from November 1st 2018 \n"
+"(CIIU4 codification)."
+msgstr ""
+"Su compañía, como emisor de documentos tributarios, tiene códigos de "
+"actividades económicas antiguas asignadas. Por favor, cerciórese que las "
+"actividades económicas de su compañía estén en concordancia con los nuevos "
+"códigos vigentes a partir del 1ro de Noviembre de 2018 (Codificación CIIU4)."
+
+#. module: l10n_cl_dte
+#: model:ir.model,name:l10n_cl_dte.model_account_invoice_gdr
+msgid "account.invoice.gdr"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: selection:res.company,dte_service_provider:0
+msgid "facturacion.cl"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.ui.view,arch_db:l10n_cl_dte.sii_dte_masive_send_wizard_form
+#: model:ir.ui.view,arch_db:l10n_cl_dte.sii_dte_validate_form
+msgid "or"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: selection:sii.send_queue,tipo_trabajo:0
+msgid "pasivo"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model,name:l10n_cl_dte.model_sii_send_queue
+msgid "sii.send_queue"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model,name:l10n_cl_dte.model_sii_regional_offices
+msgid "sii.regional.offices"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: model:ir.model,name:l10n_cl_dte.model_sii_xml_envio
+msgid "sii.xml.envio"
+msgstr ""
+
+#. module: l10n_cl_dte
+#: selection:res.company,dte_service_provider:0
+msgid "www.sii.cl"
+msgstr ""

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <report 
+            id="nomina_bci_report_xls"
+            model="account.batch.payments"
+            string="Pago Nomina BCI"
+            report_type="xlsx"
+            name="batch_supplier_payment.bci"
+            file="nomina_bci_report_xls.xlsx"
+            attachment_use="False"/>
+    </data>
+</odoo>

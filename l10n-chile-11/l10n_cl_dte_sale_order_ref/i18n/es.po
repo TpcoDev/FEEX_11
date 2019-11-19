@@ -1,0 +1,58 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_cl_dte_sale_order_ref
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e-20180814\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-10-25 14:36+0000\n"
+"PO-Revision-Date: 2018-10-25 11:40-0300\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.2\n"
+"Last-Translator: \n"
+"Language: es\n"
+
+#. module: l10n_cl_dte_sale_order_ref
+#: model:ir.ui.view,arch_db:l10n_cl_dte_sale_order_ref.invoice_wizard_view
+msgid "Customer Purchase Order Number"
+msgstr "Nro. de Orden de Compra del Cliente"
+
+#. module: l10n_cl_dte_sale_order_ref
+#: model:ir.model.fields,field_description:l10n_cl_dte_sale_order_ref.field_sale_advance_payment_inv_date_po
+msgid "Customer purchase order date"
+msgstr "Fecha de la orden de compra"
+
+#. module: l10n_cl_dte_sale_order_ref
+#: model:ir.model.fields,field_description:l10n_cl_dte_sale_order_ref.field_sale_advance_payment_inv_customer_po
+msgid "Customer purchase order number"
+msgstr "Nro. de Orden de Compra del Cliente"
+
+#. module: l10n_cl_dte_sale_order_ref
+#: model:ir.model,name:l10n_cl_dte_sale_order_ref.model_sale_advance_payment_inv
+msgid "Inherited Invoice Creation Wizard with reference to sale order"
+msgstr "Asistente para creación de facturas desde orden de venta, con referenciación a orden de venta y orden de compra"
+
+#. module: l10n_cl_dte_sale_order_ref
+#: model:ir.ui.view,arch_db:l10n_cl_dte_sale_order_ref.invoice_wizard_view
+msgid "Purchase order date"
+msgstr "Fecha de la orden de compra"
+
+#. module: l10n_cl_dte_sale_order_ref
+#: model:ir.model.fields,field_description:l10n_cl_dte_sale_order_ref.field_sale_advance_payment_inv_refer_to_po
+msgid "Refer to Purchase Order"
+msgstr "Desea referencia a la orden de compra?"
+
+#. module: l10n_cl_dte_sale_order_ref
+#: model:ir.model.fields,field_description:l10n_cl_dte_sale_order_ref.field_sale_advance_payment_inv_refer_to_so
+msgid "Refer to Sale Order"
+msgstr "Desea referencia a la orden de venta?"
+
+#. module: l10n_cl_dte_sale_order_ref
+#: model:ir.model.fields,field_description:l10n_cl_dte_sale_order_ref.field_sale_advance_payment_inv_sale_order_no
+msgid "Sale Order"
+msgstr "Orden de Venta"

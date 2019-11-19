@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_hide_components" model="ir.ui.view">
+        <field name="name">l10n_cl.view_hide_components.form</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="l10n_cl_stock_delivery_guide.view_electronic_stock_picking_form"/>
+        <field name="arch" type="xml">
+            <field name="currency_id" position="after">
+                <field name="hide_kit_components" attrs="{'readonly': [('sii_xml_request', '!=', False)]}"/>
+            </field>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_monetary_asset_form">
+            <field name="name">monetary.correction.asset.form</field>
+            <field name="inherit_id" ref="account_asset.view_account_asset_asset_form"/>
+            <field name="model">account.asset.asset</field>
+            <field name="arch" type="xml">
+                <button name="compute_depreciation_board" position="after">
+                    <button type="object" name="calculate_monetary_correction"
+                            string="Compute Monetary Correction" states="draft,open"/>
+                </button>
+                <xpath expr="//form[1]/sheet[1]/notebook[1]" position="inside">
+                    <page name="monetary_correction" string="Monetary Correction">
+
+                        <field name="year_values_ids"
+                               mode="tree" options="{'reload_whole_on_button': true}">
+                            <tree string="Annual Monetary Correction Previous Periods"
+                                  create="false">
+                                <field name="name"/>
+                                <field name="year_incremental_value"/>
+                                <field name="year_correction_value"/>
+                                <field name="depreciated_value"/>
+                                <field name="year_ipc_id"/>
+                                <field name="year_ipc_value"/>
+                                <field name="year_value"/>
+                            </tree>
+                        </field>
+
+                        <field name="monetary_correction_line_ids"
+                               mode="tree" options="{'reload_whole_on_button': true}">
+                            <tree string="Monetary Correction Board" decoration-info="(move_check == False)"
+                                  create="false">
+                                <field name="name" invisible="1"/>
+                                <field name="sequence"/>
+                                <field name="date_planned"/>
+                                <field name="ipc_id"/>
+                                <field name="ipc_value"/>
+                                <field name="book_value"/>
+                                <field name="depreciated_value"/>
+                                <field name="month_to_year"/>
+                                <field name="month_to_total"/>
+                                <field name="rate_to_adjust"/>
+                                <field name="correction_value"/>
+                                <field name="corrected_value"/>
+                                <field name="move_made_id"/>
+                                <field name="date_entry"/>
+                                <field name="move_check" widget="deprec_lines_toggler"
+                                       attrs="{'invisible': [('parent_state', '!=', 'open')]}"/>
+                                <field name="move_posted_check" invisible="1"/>
+                                <field name="parent_state" invisible="1"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page name="monetary_corr_info" string="Monetary Correction Info">
+                        <group name="group_mc_info_main">
+                            <group name="group_mc_info_left">
+                                <field name="monetary_correction_journal_id"/>
+                                <field name="calculation_basis" widget="radio"/>
+                            </group>
+                            <group name="group_mc_info_right"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

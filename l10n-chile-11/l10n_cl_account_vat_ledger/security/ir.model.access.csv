@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+edit_account_move_book_manager,account_move_book_manager,model_account_move_book,account.group_account_manager,1,1,1,1
+access_account_move_book_user,account_move_book_user,model_account_move_book,,1,0,0,0
+edit_account_move_book_tax_manager,account_move_book_tax_manager,model_account_move_book_tax,account.group_account_manager,1,1,1,1
+access_account_move_book_tax_user,account_move_book_tax_user,model_account_move_book_tax,base.group_user,1,0,0,0
+access_account_move_book,access_account_move_book,model_account_move_book,base.group_user,1,0,0,0
+access_account_move_book_receipts,access_account_move_book_receipts,model_account_move_book_receipts,base.group_user,1,0,0,0

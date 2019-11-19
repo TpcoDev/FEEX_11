@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="0">
+    <record model="localization.fields" id="localization_fields_1">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.account.tag</field>
+        <field name="field">jurisdiction_code</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_2">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.account.template</field>
+        <field name="field">opening_clousure_account_id</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_3">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.tax.template</field>
+        <field name="field">tax_group_id</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_4">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.chart.template</field>
+        <field name="field">opening_clousure_account_id</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_5">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">res.partner</field>
+        <field name="field">main_id_number</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_6">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">state_id</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_7">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">currency_rate</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_8">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">document_letter_id</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_9">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">document_letter_name</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_10">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">taxes_included</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_11">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">taxpayer_type_id</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_12">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">invoice_number</field>
+    </record>
+    <!--<record model="localization.fields" id="localization_fields_13">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">point_of_sale_number</field>
+    </record>-->
+    <record model="localization.fields" id="localization_fields_14">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">vat_tax_ids</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_15">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">vat_taxable_ids</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_16">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">not_vat_tax_ids</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_17">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">vat_base_amount</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_18">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">vat_taxable_amount</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_19">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">vat_exempt_base_amount</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_20">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">vat_untaxed_base_amount</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_21">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">vat_amount</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_22">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">other_taxes_amount</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_23">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">sii_incoterms_id</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_24">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">point_of_sale_type</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_25">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">sii_concept</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_26">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">sii_service_start</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_27">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">sii_concept</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_28">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">sii_service_end</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_29">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice.line</field>
+        <field name="field">vat_tax_id</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_30">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.journal</field>
+        <field name="field">_point_of_sale_types_selection</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_31">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.journal</field>
+        <field name="field">point_of_sale_type</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_32">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.journal</field>
+        <field name="field">point_of_sale_number</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_33">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.journal</field>
+        <field name="field">bank_sbif</field>
+    </record>
+    <!--<record model="localization.fields" id="localization_fields_34">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.journal</field>
+        <field name="field">point_of_sale_id</field>
+    </record>-->
+    <record model="localization.fields" id="localization_fields_35">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.journal</field>
+        <field name="field">sii_code</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_37">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.move</field>
+        <field name="field">taxpayer_type_id</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_38">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.move.line</field>
+        <field name="field">taxpayer_type_id</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_39">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.tax</field>
+        <field name="field">sii_code</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_40">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.tax</field>
+        <field name="field">jurisdiction_code</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_41">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.tax</field>
+        <field name="field">sii_type</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_42">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.tax</field>
+        <field name="field">retencion</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_43">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.tax</field>
+        <field name="field">no_rec</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_44">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.tax</field>
+        <field name="field">activo_fijo</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_45">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">product.uom</field>
+        <field name="field">sii_code</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_46">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">res.company</field>
+        <field name="field">start_date</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_47">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">res.company</field>
+        <field name="field">taxpayer_type_id</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_48">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">res.company</field>
+        <field name="field">company_requires_vat</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_49">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">res.company</field>
+        <field name="field">tax_calculation_rounding_method</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_50">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">res.country</field>
+        <field name="field">sii_code</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_51">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">res.country</field>
+        <field name="field">rut_natural</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_52">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">res.country</field>
+        <field name="field">rut_juridica</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_53">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">res.country</field>
+        <field name="field">rut_otro</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_54">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">res.currency</field>
+        <field name="field">sii_code</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_55">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">res.partner</field>
+        <field name="field">start_date</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_56">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">res.partner</field>
+        <field name="field">taxpayer_type_id</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_65">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">stock.incoterms</field>
+        <field name="field">sii_code</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_66">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">res.partner</field>
+        <field name="field">dte_email</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_67">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">res.company</field>
+        <field name="field">dte_email</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_68">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">res.company</field>
+        <field name="field">dte_service_provider</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_69">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">res.company</field>
+        <field name="field">dte_resolution_number</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_70">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">res.company</field>
+        <field name="field">dte_resolution_date</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_71">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">res.company</field>
+        <field name="field">sii_regional_office_id</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_72">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">res.company</field>
+        <field name="field">dte_username</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_73">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">res.company</field>
+        <field name="field">dte_password</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_74">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">res.company</field>
+        <field name="field">dte_tributarias</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_75">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">res.company</field>
+        <field name="field">dte_cedibles</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_76">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice.reference</field>
+        <field name="field">reference_doc_type</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_77">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice.reference</field>
+        <field name="field">reference_doc_code</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_78">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice.reference</field>
+        <field name="field">reason</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_79">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice.reference</field>
+        <field name="field">invoice_id</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_80">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice.reference</field>
+        <field name="field">date</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_81">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">taxes_included</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_82">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">available_journal_document_type_ids</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_83">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">journal_document_type_id</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_84">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">document_type_id</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_85">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">sii_document_number</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_86">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">taxpayer_type_id</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_87">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">vat_for_common_use</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_88">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">no_rec_code</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_89">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">next_invoice_number</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_90">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">use_documents</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_91">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">reference_ids</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_92">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">contact_id</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_93">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">sii_batch_number</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_94">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">sii_barcode</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_95">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">sii_barcode_img</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_96">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">sii_message</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_97">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">sii_xml_dte</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_98">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">sii_xml_request</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_99">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">sii_result</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_100">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">canceled</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_101">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">dte_reception_status</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_102">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">estado_recep_glosa</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_103">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">ticket</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_104">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">claim</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_105">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">claim_description</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_106">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">purchase_to_done</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_107">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">amount_untaxed_global_discount</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_108">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">amount_untaxed_global_recargo</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_109">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">global_descuentos_recargos</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_110">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.payment.term</field>
+        <field name="field">dte_sii_code</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_111">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">res.bank</field>
+        <field name="field">sbif_code</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_112">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.account.tag</field>
+        <field name="field">account_tag_code</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_113">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">res.company</field>
+        <field name="field">main_id_category_id</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_114">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">res.company</field>
+        <field name="field">main_id_number</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_115">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">res.company</field>
+        <field name="field">rut</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_116">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">res.partner</field>
+        <field name="field">rut</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_117">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">res.partner</field>
+        <field name="field">formated_rut</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_118">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">res.partner</field>
+        <field name="field">main_id_number</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_119">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">res.partner</field>
+        <field name="field">main_id_category_id</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_120">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">res.partner</field>
+        <field name="field">activity_description</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_121">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">res.partner</field>
+        <field name="field">partner_activities_ids</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_122">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">res.company</field>
+        <field name="field">activity_description</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_123">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">account.invoice</field>
+        <field name="field">activity_description</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_124">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">res.company</field>
+        <field name="field">company_activities_ids</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_125">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">res.company</field>
+        <field name="field">company_activity_description_invisible</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_126">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">res.company</field>
+        <field name="field">activities_opt</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_127">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">res.company</field>
+        <field name="field">activity_description</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_128">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">res.company</field>
+        <field name="field">main_id_number</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_129">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">sale.advance.payment.inv</field>
+        <field name="field">refer_to_so</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_130">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">sale.advance.payment.inv</field>
+        <field name="field">sale_order_no</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_131">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">sale.advance.payment.inv</field>
+        <field name="field">refer_to_po</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_132">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">sale.advance.payment.inv</field>
+        <field name="field">customer_po</field>
+    </record>
+    <record model="localization.fields" id="localization_fields_133">
+        <field name="chart_account">l10n_cl_chart.cl_chart_template_bmya</field>
+        <field name="model">sale.advance.payment.inv</field>
+        <field name="field">date_po</field>
+    </record>
+</odoo>

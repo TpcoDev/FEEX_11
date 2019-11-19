@@ -1,0 +1,48 @@
+# -*- coding: utf-8 -*-
+{
+    "name": """Chile - Incoming XMLS""",
+    'version': '11.0.1.0.0',
+    'category': 'Localization/Chile',
+    'sequence': 12,
+    'author':  'Blanco Martín & Asociados, OdooCoop',
+    'website': 'http://blancomartin.cl',
+    'license': 'AGPL-3',
+    'depends': [
+        'account',
+        'l10n_cl_account',
+        'l10n_cl_counties',
+        'l10n_cl_dte',
+        'l10n_cl_localization_filter',
+        'l10n_cl_partner_activities',
+        'mail',
+        'user_signature_key',
+        ],
+    'external_dependencies': {
+        'python': [
+            'xmltodict',
+            'dicttoxml',
+            'pdf417gen',
+            'M2Crypto',
+            'base64',
+            'hashlib',
+            'cchardet',
+            'zeep',
+            'urllib3',
+            'signxml',
+            'ast'
+        ],
+    },
+    'data': [
+        'views/invoice_view.xml',
+        'views/mail_message_dte_view.xml',
+        'views/mail_message_dte_document_view.xml',
+        'views/email_templates.xml',
+        'views/sii_xml_envio.xml',
+        'wizard/validate.xml',
+        'wizard/upload_xml.xml',
+        'security/ir.model.access.csv',
+    ],
+    'installable': True,
+    'auto_install': True,
+    'application': False,
+}

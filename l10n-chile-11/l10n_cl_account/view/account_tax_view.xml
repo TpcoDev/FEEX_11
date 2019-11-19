@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_account_tax_form" model="ir.ui.view">
+            <field name="name">account.tax.form</field>
+            <field name="model">account.tax</field>
+            <field name="inherit_id" ref="account.view_tax_form"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="sii_code"/>
+                    <field name="sii_type" />
+                <field name="retencion" attrs="{'required':[('sii_type','in',['R'])], 'invisible':[('sii_type','=',False)]}" />
+                <field name="no_rec" />
+                <field name="activo_fijo" />
+                </field>
+            </field>
+        </record>
+
+        <record id="view_tax_sii_code_tree" model="ir.ui.view">
+            <field name="name">account.tax.sii.code.tree</field>
+            <field name="model">account.tax</field>
+            <field name="inherit_id" ref="account.view_tax_tree" />
+            <field name="arch" type="xml">
+                <field name="name" position="before">
+                    <field name="sii_code" />
+                    <field name="sii_type" />
+                    <field name="retencion" />
+                    <field name="no_rec" />
+                    <field name="activo_fijo" />
+                </field>
+            </field>
+        </record>
+
+        <record id="view_account_tax_template_form" model="ir.ui.view">
+            <field name="name">account.tax.template.form</field>
+            <field name="model">account.tax.template</field>
+            <field name="inherit_id" ref="account.view_account_tax_template_form"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="sii_code"/>
+                    <field name="sii_type" />
+                <field name="retencion" attrs="{'required':[('sii_type','in',['R'])], 'invisible':[('sii_type','=',False)]}" />
+                <field name="no_rec" />
+                <field name="activo_fijo" />
+                </field>
+            </field>
+        </record>
+
+        <record id="view_account_tax_template_tree" model="ir.ui.view">
+            <field name="name">account.tax.template.sii.tree</field>
+            <field name="model">account.tax.template</field>
+            <field name="inherit_id" ref="account.view_account_tax_template_tree" />
+            <field name="arch" type="xml">
+                <field name="name" position="before">
+                    <field name="sii_code" />
+                    <field name="sii_type" />
+                    <field name="retencion" />
+                    <field name="no_rec" />
+                    <field name="activo_fijo" />
+                </field>
+            </field>
+        </record>
+
+        <record id="view_account_position_form" model="ir.ui.view">
+            <field name="name">account.fiscal.position.form</field>
+            <field name="model">account.fiscal.position</field>
+            <field name="inherit_id" ref="account.view_account_position_form"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="sii_code"/>
+                </field>
+                <field name="vat_required" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="vat_required" position="after">
+                    <field name="taxpayer_type_ids" widget="many2many_tags" attrs="{'invisible': [('auto_apply', '!=', True)]}"/>
+                    <field name="no_rec_code"/>
+                    <field name="vat_for_common_use"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_account_position_template_form" model="ir.ui.view">
+            <field name="name">account.fiscal.position.template.form</field>
+            <field name="model">account.fiscal.position.template</field>
+            <field name="inherit_id" ref="account.view_account_position_template_form"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="sii_code"/>
+                    <field name="auto_apply"/>
+                    <field name="taxpayer_type_ids" widget="many2many_tags" attrs="{'invisible': [('auto_apply', '!=', True)]}"/>
+                    <field name="country_group_id" attrs="{'invisible': [('auto_apply', '!=', True)]}"/>
+                    <field name="country_id" attrs="{'invisible': [('auto_apply', '!=', True)]}"/>
+                    <field name="state_ids" widget="many2many_tags" domain="[('country_id', '=', country_id)]"
+                        attrs="{'invisible': ['|', ('auto_apply', '!=', True), ('country_id', '=', False)]}"/>
+                    <label for="zip_from" string="Zip Range"
+                        attrs="{'invisible': ['|', ('auto_apply', '!=', True), ('country_id', '=', False)]}"/>
+                    <div attrs="{'invisible': ['|', ('auto_apply', '!=', True), ('country_id', '=', False)]}">
+                        <span> From </span>
+                        <field name="zip_from" class="oe_inline"/>
+                        <div class="oe_edit_only"/>
+                        <span> To </span>
+                        <field name="zip_to" class="oe_inline"/>
+                    </div>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

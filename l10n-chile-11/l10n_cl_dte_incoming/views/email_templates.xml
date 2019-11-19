@@ -1,0 +1,93 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+        <!--<delete id="email_template_receipt_ack" model="mail.template"/>
+        <delete id="email_template_receipt_commercial_accept" model="mail.template"/>
+        <delete id="email_template_receipt_of_goods" model="mail.template"/>
+        <delete id="email_template_edi_invoice" model="email.template"/>-->
+        <record id="email_template_receipt_ack" model="mail.template">
+            <field name="name">DTE Receipt Acknowledgment</field>
+            <field name="subject">Acuse de Recibo - ${object.name}</field>
+            <field name="email_from">${object.company_id.dte_email}</field>
+            <field name="email_to">${object.mail_id.email_from}</field>
+            <field name="model_id" ref="l10n_cl_dte_incoming.model_mail_message_dte" />
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html">
+            <![CDATA[
+                <header>
+                <strong>Facturación Electrónica - Acuse de Recibo de Envio de DTE ${object.name}</strong>
+                </header>
+                <p>En el archivo adjunto puede encontrar el resultado del proceso de revisión y
+                validación de un envío de Documentos Tributarios Electronicos que Usted
+                realizó.</p>
+                <br />
+                <p>Esta es una aplicación automática, por lo tanto no conteste este correo ni
+                haga consultas o comentarios a la dirección de origen.</p>
+                <br /><br /><br /><br />
+                <p>Enviado Usando Odoo</p>
+            ]]>
+            </field>
+        </record>
+        <record id="email_template_receipt_commercial_accept" model="mail.template">
+            <field name="name">DTE Receipt Commercial Accepted</field>
+            <field name="subject">Respuesta de Aceptación Comercial - ${object.display_name}</field>
+            <field name="email_from">${object.company_id.dte_email}</field>
+            <field name="email_to">${object.partner_id.dte_email}</field>
+            <field name="model_id" ref="account.model_account_invoice" />
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html">
+            <![CDATA[
+                <header>
+                <strong>Facturación Electrónica - Respuesta de Aceptación Comercial - ${object.display_name}</strong>
+                </header>
+                <p>En el archivo adjunto puede encontrar la respuesta de aceptación comercial
+                de su(s) Documento(s) Tributarios Electronico(s).</p>
+                <br /><br /><br /><br />
+                <p>Enviado Usando Odoo</p>
+            ]]>
+            </field>
+        </record>
+        <record id="email_template_receipt_of_goods" model="mail.template">
+            <field name="name">DTE Receipt of Goods</field>
+            <field name="subject">Respuesta de Recepción de Mercaderías - ${object.display_name}</field>
+            <field name="email_from">${object.company_id.dte_email}</field>
+            <field name="email_to">${object.partner_id.dte_email}</field>
+            <field name="model_id" ref="account.model_account_invoice" />
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html">
+            <![CDATA[
+                <header>
+                <strong>Facturación Electrónica - Respuesta de Recepción de Mercaderías - ${object.display_name}</strong>
+                </header>
+                <p>En el archivo adjunto puede encontrar la respuesta de recepción de mercaderías o servicios
+                correspondientes a su(s) Documento(s) Tributarios Electronico(s).</p>
+                <br /><br /><br /><br />
+                <p>Enviado Usando Odoo</p>
+            ]]>
+            </field>
+        </record>
+        <record id="email_template_commercial_reject" model="mail.template">
+            <field name="name">DTE Commercial Reject</field>
+            <field name="subject">Respuesta de Rechazo Comercial - ${object.name}</field>
+            <field name="email_from">${object.company_id.dte_email}</field>
+            <field name="email_to">${object.mail_id.email_from}</field>
+            <field name="model_id" ref="l10n_cl_dte_incoming.model_mail_message_dte" />
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html">
+            <![CDATA[
+                <header>
+                <strong>Facturación Electrónica - Respuesta de Rechazo Comercial ${object.name}</strong>
+                </header>
+                <p>En el archivo adjunto puede encontrar el resultado del proceso de revisión y
+                rechazo de un envío de Documentos Tributarios Electronicos que Usted
+                realizó.</p>
+                <br />
+                <p>Esta es una aplicación automática, por lo tanto no conteste este correo ni
+                haga consultas o comentarios a la dirección de origen.</p>
+                <br /><br /><br /><br />
+                <p>Enviado Usando Odoo</p>
+            ]]>
+            </field>
+        </record>
+    </data>
+</odoo>

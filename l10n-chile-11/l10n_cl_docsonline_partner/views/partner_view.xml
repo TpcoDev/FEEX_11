@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_update_button_form" model="ir.ui.view">
+            <field name="name">view.update.button.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <field name="company_type" position="after">
+                    <button string="Actualizar desde www.documentosonline.cl"
+                            attrs="{'invisible': [('main_id_number', '=', False)]}"
+                            type="object" name="press_to_update" icon="fa-arrow-right" class="oe_highlight"/>
+                    <button string="Buscar en www.documentosonline.cl"
+                            attrs="{'invisible': [('main_id_number', '!=', False)]}"
+                            type="object" name="call_wizard" icon="fa-arrow-right" class="oe_highlight"/>
+                </field>
+
+                <xpath expr="//notebook/page[@name='internal_notes']" position="inside">
+                    <label for="backup_name">Nombre de Respaldo (anterior)</label>
+                    <field name="backup_name"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+

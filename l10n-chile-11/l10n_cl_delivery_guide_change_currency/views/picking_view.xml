@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="delivery_currency_picking_form">
+            <field name="name">delivery_currency_picking_form</field>
+            <field name="inherit_id" ref="l10n_cl_stock_delivery_guide.view_electronic_stock_picking_form"/>
+            <field name="model">stock.picking</field>
+            <!--<field name="groups_id" eval="[(4, ref('group_restrict_change_currency_exchange'))]"/>-->
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='currency_id']" position="after">
+                    <button name="%(action_picking_change_currency)d" type="action" class="oe_inline oe_link" string="(change)"/>
+                            <!--attrs="{'invisible':[('state','!=','draft')]}" groups="stock.group_stock_manager"-->
+                </xpath>
+            </field>
+        </record>
+        <!--<record model="ir.ui.view" id="picking_no_exchange_form">
+            <field name="name">picking.no.exchange.form</field>
+            <field name="inherit_id" ref="l10n_cl_stock_delivery_guide.view_electronic_stock_picking_form"/>
+            <field name="model">stock.picking</field>
+            <field name="groups_id" eval="[(4, ref('group_restrict_change_currency_exchange'))]"/>
+            <field name="arch" type="xml">
+                <field name="currency_id" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                </field>
+            </field>
+        </record>-->
+    </data>
+</odoo>
