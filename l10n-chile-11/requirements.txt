@@ -58,7 +58,7 @@ python-slugify==1.2.4
 python-stdnum==1.2
 python3-openid==3.0.9
 pyusb
-PyYAML==4.2b1
+PyYAML==5.4
 reportlab==3.3.0
 roman==2.0.0
 setproctitle==1.1.8
