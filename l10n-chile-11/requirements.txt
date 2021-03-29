@@ -45,7 +45,7 @@ ptyprocess==0.5
 pyasn1>=0.4.1,<0.5
 pycrypto>=2.6.1
 pycurl==7.43.0
-Pygments==2.1
+Pygments==2.7.4
 pyldap
 pyOpenSSL>=17.5.0
 pyparsing==2.0.3
