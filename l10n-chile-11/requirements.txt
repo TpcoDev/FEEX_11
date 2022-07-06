@@ -19,7 +19,7 @@ geopy==0.95.1
 gevent-websocket==0.10.1
 git+https://github.com/OCA/openupgradelib.git
 git+https://github.com/pysiidte/pysiidte.git@0.96
-html5lib==0.999
+html5lib==0.999999999
 httplib2==0.9.1
 idna==2.6
 IPy
